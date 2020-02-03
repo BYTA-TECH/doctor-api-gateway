@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.time.OffsetDateTime;
 import java.util.Date;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
@@ -14,7 +15,7 @@ import java.time.*;
  * SlotDTO
  */
 @Validated
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-31T12:41:12.842+05:30[Asia/Kolkata]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-03T12:20:38.958+05:30[Asia/Kolkata]")
 
 public class SlotDTO   {
   @JsonProperty("date")
@@ -23,18 +24,14 @@ public class SlotDTO   {
   @JsonProperty("doctorId")
   private Long doctorId = null;
 
- 
+  @JsonProperty("fromTime")
+  private OffsetDateTime fromTime = null;
 
   @JsonProperty("id")
   private Long id = null;
 
- 
- 
-  @JsonProperty("fromTime")
-  private Instant fromTime  = null;
-
   @JsonProperty("toTime")
-  private Instant toTime  = null;
+  private OffsetDateTime toTime = null;
 
   public SlotDTO date(LocalDate date) {
     this.date = date;
@@ -77,24 +74,25 @@ public class SlotDTO   {
     this.doctorId = doctorId;
   }
 
-  public SlotDTO toTime(Instant toTime) {
-    this.toTime = toTime;
+  public SlotDTO fromTime(OffsetDateTime fromTime) {
+    this.fromTime = fromTime;
     return this;
   }
 
   /**
-   * Get toTime
-   * @return toTime
+   * Get fromTime
+   * @return fromTime
   **/
   @ApiModelProperty(value = "")
 
+  @Valid
 
-  public Instant getToTime() {
-    return toTime;
+  public OffsetDateTime getFromTime() {
+    return fromTime;
   }
 
-  public void setToTime(Instant toTime) {
-    this.toTime = toTime;
+  public void setFromTime(OffsetDateTime fromTime) {
+    this.fromTime = fromTime;
   }
 
   public SlotDTO id(Long id) {
@@ -117,24 +115,25 @@ public class SlotDTO   {
     this.id = id;
   }
 
-  public SlotDTO fromTime(Instant fromTime) {
-    this.fromTime = fromTime;
+  public SlotDTO toTime(OffsetDateTime toTime) {
+    this.toTime = toTime;
     return this;
   }
 
   /**
-   * Get fromTime
-   * @return fromTime
+   * Get toTime
+   * @return toTime
   **/
   @ApiModelProperty(value = "")
 
+  @Valid
 
-  public Instant getFromTime() {
-    return fromTime;
+  public OffsetDateTime getToTime() {
+    return toTime;
   }
 
-  public void setFromTime(Instant fromTime) {
-    this.fromTime = fromTime;
+  public void setToTime(OffsetDateTime toTime) {
+    this.toTime = toTime;
   }
 
 
@@ -149,14 +148,14 @@ public class SlotDTO   {
     SlotDTO slotDTO = (SlotDTO) o;
     return Objects.equals(this.date, slotDTO.date) &&
         Objects.equals(this.doctorId, slotDTO.doctorId) &&
-        Objects.equals(this.toTime, slotDTO.toTime) &&
+        Objects.equals(this.fromTime, slotDTO.fromTime) &&
         Objects.equals(this.id, slotDTO.id) &&
-        Objects.equals(this.fromTime, slotDTO.fromTime);
+        Objects.equals(this.toTime, slotDTO.toTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(date, doctorId, toTime, id, fromTime);
+    return Objects.hash(date, doctorId, fromTime, id, toTime);
   }
 
   @Override
@@ -166,9 +165,9 @@ public class SlotDTO   {
     
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    doctorId: ").append(toIndentedString(doctorId)).append("\n");
-    sb.append("    toTime: ").append(toIndentedString(toTime)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    fromTime: ").append(toIndentedString(fromTime)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    toTime: ").append(toIndentedString(toTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

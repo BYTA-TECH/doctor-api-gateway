@@ -15,7 +15,7 @@ import java.time.*;
  * SessionInfoDTO
  */
 @Validated
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-31T12:41:12.842+05:30[Asia/Kolkata]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-03T12:20:38.958+05:30[Asia/Kolkata]")
 
 public class SessionInfoDTO   {
   @JsonProperty("date")
@@ -28,16 +28,13 @@ public class SessionInfoDTO   {
   private Long id = null;
 
   @JsonProperty("interval")
-  private Double interval = null;
+  private Long interval = null;
 
   @JsonProperty("sessionName")
   private String sessionName = null;
 
   @JsonProperty("toTime")
   private OffsetDateTime toTime = null;
-
-  @JsonProperty("weekDay")
-  private Integer weekDay = null;
 
   @JsonProperty("workPlaceId")
   private Long workPlaceId = null;
@@ -104,7 +101,7 @@ public class SessionInfoDTO   {
     this.id = id;
   }
 
-  public SessionInfoDTO interval(Double interval) {
+  public SessionInfoDTO interval(Long interval) {
     this.interval = interval;
     return this;
   }
@@ -116,11 +113,11 @@ public class SessionInfoDTO   {
   @ApiModelProperty(value = "")
 
 
-  public Double getInterval() {
+  public Long getInterval() {
     return interval;
   }
 
-  public void setInterval(Double interval) {
+  public void setInterval(Long interval) {
     this.interval = interval;
   }
 
@@ -165,26 +162,6 @@ public class SessionInfoDTO   {
     this.toTime = toTime;
   }
 
-  public SessionInfoDTO weekDay(Integer weekDay) {
-    this.weekDay = weekDay;
-    return this;
-  }
-
-  /**
-   * Get weekDay
-   * @return weekDay
-  **/
-  @ApiModelProperty(value = "")
-
-
-  public Integer getWeekDay() {
-    return weekDay;
-  }
-
-  public void setWeekDay(Integer weekDay) {
-    this.weekDay = weekDay;
-  }
-
   public SessionInfoDTO workPlaceId(Long workPlaceId) {
     this.workPlaceId = workPlaceId;
     return this;
@@ -221,13 +198,12 @@ public class SessionInfoDTO   {
         Objects.equals(this.interval, sessionInfoDTO.interval) &&
         Objects.equals(this.sessionName, sessionInfoDTO.sessionName) &&
         Objects.equals(this.toTime, sessionInfoDTO.toTime) &&
-        Objects.equals(this.weekDay, sessionInfoDTO.weekDay) &&
         Objects.equals(this.workPlaceId, sessionInfoDTO.workPlaceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(date, fromTime, id, interval, sessionName, toTime, weekDay, workPlaceId);
+    return Objects.hash(date, fromTime, id, interval, sessionName, toTime, workPlaceId);
   }
 
   @Override
@@ -241,7 +217,6 @@ public class SessionInfoDTO   {
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    sessionName: ").append(toIndentedString(sessionName)).append("\n");
     sb.append("    toTime: ").append(toIndentedString(toTime)).append("\n");
-    sb.append("    weekDay: ").append(toIndentedString(weekDay)).append("\n");
     sb.append("    workPlaceId: ").append(toIndentedString(workPlaceId)).append("\n");
     sb.append("}");
     return sb.toString();

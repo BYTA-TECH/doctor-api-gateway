@@ -25,7 +25,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-31T12:41:12.842+05:30[Asia/Kolkata]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-03T12:20:38.958+05:30[Asia/Kolkata]")
 
 @Api(value = "WorkPlaceResource", description = "the WorkPlaceResource API")
 public interface WorkPlaceResourceApi {
@@ -77,18 +77,6 @@ public interface WorkPlaceResourceApi {
         produces = "*/*", 
         method = RequestMethod.GET)
     ResponseEntity<WorkPlaceDTO> getWorkPlaceUsingGET(@ApiParam(value = "id",required=true) @PathVariable("id") Long id);
-
-
-    @ApiOperation(value = "searchWorkPlaces", nickname = "searchWorkPlacesUsingGET", notes = "", response = WorkPlaceDTO.class, responseContainer = "List", tags={ "work-place-resource", })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = WorkPlaceDTO.class, responseContainer = "List"),
-        @ApiResponse(code = 401, message = "Unauthorized"),
-        @ApiResponse(code = 403, message = "Forbidden"),
-        @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/api/_search/work-places",
-        produces = "*/*", 
-        method = RequestMethod.GET)
-    ResponseEntity<List<WorkPlaceDTO>> searchWorkPlacesUsingGET(@NotNull @ApiParam(value = "query", required = true) @Valid @RequestParam(value = "query", required = true) String query,@ApiParam(value = "Page number of the requested page") @Valid @RequestParam(value = "page", required = false) Integer page,@ApiParam(value = "Size of a page") @Valid @RequestParam(value = "size", required = false) Integer size,@ApiParam(value = "Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.") @Valid @RequestParam(value = "sort", required = false) List<String> sort);
 
 
     @ApiOperation(value = "updateWorkPlace", nickname = "updateWorkPlaceUsingPUT", notes = "", response = WorkPlaceDTO.class, tags={ "work-place-resource", })

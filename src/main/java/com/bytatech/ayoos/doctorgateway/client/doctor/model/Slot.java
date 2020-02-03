@@ -1,6 +1,9 @@
 package com.bytatech.ayoos.doctorgateway.client.doctor.model;
 
-import java.time.*;
+
+import java.io.Serializable;
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -8,25 +11,21 @@ import java.util.Set;
  * A Slot.
  */
 
-public class Slot {
-
+public class Slot{
 
 
     private Long id;
 
-    
     private LocalDate date;
 
-    
+   
     private Instant fromTime;
 
-    
     private Instant toTime;
 
-    
     private Set<Status> statuses = new HashSet<>();
 
-
+    
     private Doctor doctor;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
@@ -116,7 +115,7 @@ public class Slot {
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
-  /*  @Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -125,7 +124,7 @@ public class Slot {
             return false;
         }
         return id != null && id.equals(((Slot) o).id);
-    }*/
+    }
 
     @Override
     public int hashCode() {
@@ -137,39 +136,8 @@ public class Slot {
         return "Slot{" +
             "id=" + getId() +
             ", date='" + getDate() + "'" +
-            ", fromTime=" + getFromTime() +
-            ", toTime=" + getToTime() +
+            ", fromTime='" + getFromTime() + "'" +
+            ", toTime='" + getToTime() + "'" +
             "}";
     }
-
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Slot other = (Slot) obj;
-		if (date == null) {
-			if (other.date != null)
-				return false;
-		} else if (!date.equals(other.date))
-			return false;
-		if (fromTime == null) {
-			if (other.fromTime != null)
-				return false;
-		} else if (!fromTime.equals(other.fromTime))
-			return false;
-		if (toTime == null) {
-			if (other.toTime != null)
-				return false;
-		} else if (!toTime.equals(other.toTime))
-			return false;
-		return true;
-	}
-
-	
 }

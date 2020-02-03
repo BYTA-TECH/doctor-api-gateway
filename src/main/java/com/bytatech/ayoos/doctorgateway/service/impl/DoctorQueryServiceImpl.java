@@ -255,7 +255,7 @@ public	Set<Slot> createSlot(Long workPlaceId,LocalDate date, String doctorIdpCod
 			Slot slot = new Slot();
 			slot.setDate(date);
 			slot.setFromTime(s.getFromTime());
-			slot.setToTime(s.getFromTime().plusSeconds(s.getIntervalTime()+i));
+			slot.setToTime(s.getFromTime().plusSeconds(s.getInterval()+i));
 			slotEndTime =slot.getToTime();
 			slotSet.add(slot);
 			i++;

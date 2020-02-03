@@ -25,7 +25,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-31T12:41:12.842+05:30[Asia/Kolkata]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-03T12:20:38.958+05:30[Asia/Kolkata]")
 
 @Api(value = "ContactInfoResource", description = "the ContactInfoResource API")
 public interface ContactInfoResourceApi {
@@ -77,18 +77,6 @@ public interface ContactInfoResourceApi {
         produces = "*/*", 
         method = RequestMethod.GET)
     ResponseEntity<ContactInfoDTO> getContactInfoUsingGET(@ApiParam(value = "id",required=true) @PathVariable("id") Long id);
-
-
-    @ApiOperation(value = "searchContactInfos", nickname = "searchContactInfosUsingGET", notes = "", response = ContactInfoDTO.class, responseContainer = "List", tags={ "contact-info-resource", })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ContactInfoDTO.class, responseContainer = "List"),
-        @ApiResponse(code = 401, message = "Unauthorized"),
-        @ApiResponse(code = 403, message = "Forbidden"),
-        @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/api/_search/contact-infos",
-        produces = "*/*", 
-        method = RequestMethod.GET)
-    ResponseEntity<List<ContactInfoDTO>> searchContactInfosUsingGET(@NotNull @ApiParam(value = "query", required = true) @Valid @RequestParam(value = "query", required = true) String query,@ApiParam(value = "Page number of the requested page") @Valid @RequestParam(value = "page", required = false) Integer page,@ApiParam(value = "Size of a page") @Valid @RequestParam(value = "size", required = false) Integer size,@ApiParam(value = "Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.") @Valid @RequestParam(value = "sort", required = false) List<String> sort);
 
 
     @ApiOperation(value = "updateContactInfo", nickname = "updateContactInfoUsingPUT", notes = "", response = ContactInfoDTO.class, tags={ "contact-info-resource", })

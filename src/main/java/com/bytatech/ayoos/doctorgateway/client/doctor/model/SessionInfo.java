@@ -1,5 +1,7 @@
 package com.bytatech.ayoos.doctorgateway.client.doctor.model;
 
+
+import java.io.Serializable;
 import java.time.Instant;
 import java.time.LocalDate;
 
@@ -9,19 +11,16 @@ import java.time.LocalDate;
 
 public class SessionInfo  {
 
+    private static final long serialVersionUID = 1L;
 
 
-  
     private Long id;
 
- 
+   
     private String sessionName;
 
 
     private LocalDate date;
-
- 
-    private Integer weekDay;
 
 
     private Instant fromTime;
@@ -29,12 +28,10 @@ public class SessionInfo  {
   
     private Instant toTime;
 
-  
-    private Double interval;
-
-    private Long intervalTime;
-    
  
+    private Long interval;
+
+   
     private WorkPlace workPlace;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
@@ -72,19 +69,6 @@ public class SessionInfo  {
         this.date = date;
     }
 
-    public Integer getWeekDay() {
-        return weekDay;
-    }
-
-    public SessionInfo weekDay(Integer weekDay) {
-        this.weekDay = weekDay;
-        return this;
-    }
-
-    public void setWeekDay(Integer weekDay) {
-        this.weekDay = weekDay;
-    }
-
     public Instant getFromTime() {
         return fromTime;
     }
@@ -111,24 +95,16 @@ public class SessionInfo  {
         this.toTime = toTime;
     }
 
-    public Double getInterval() {
+    public Long getInterval() {
         return interval;
     }
 
-    public Long getIntervalTime() {
-        return intervalTime;
-    }
-    
-    public void setInterval(Long intervalTime) {
-        this.intervalTime = intervalTime;
-    }
-    
-    public SessionInfo interval(Double interval) {
+    public SessionInfo interval(Long interval) {
         this.interval = interval;
         return this;
     }
 
-    public void setInterval(Double interval) {
+    public void setInterval(Long interval) {
         this.interval = interval;
     }
 
@@ -168,10 +144,8 @@ public class SessionInfo  {
             "id=" + getId() +
             ", sessionName='" + getSessionName() + "'" +
             ", date='" + getDate() + "'" +
-            ", weekDay=" + getWeekDay() +
             ", fromTime='" + getFromTime() + "'" +
             ", toTime='" + getToTime() + "'" +
-            ", intervalTime='" + getIntervalTime() + "'" +
             ", interval=" + getInterval() +
             "}";
     }
