@@ -2,7 +2,7 @@ package com.bytatech.ayoos.doctorgateway.client.doctor.model;
 
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.OffsetDateTime;
 import java.time.LocalDate;
 
 /**
@@ -23,10 +23,10 @@ public class SessionInfo  {
     private LocalDate date;
 
 
-    private Instant fromTime;
+    private OffsetDateTime fromTime;
 
   
-    private Instant toTime;
+    private OffsetDateTime toTime;
 
  
     private Long interval;
@@ -69,29 +69,29 @@ public class SessionInfo  {
         this.date = date;
     }
 
-    public Instant getFromTime() {
+    public OffsetDateTime getFromTime() {
         return fromTime;
     }
 
-    public SessionInfo fromTime(Instant fromTime) {
+    public SessionInfo fromTime(OffsetDateTime fromTime) {
         this.fromTime = fromTime;
         return this;
     }
 
-    public void setFromTime(Instant fromTime) {
+    public void setFromTime(OffsetDateTime fromTime) {
         this.fromTime = fromTime;
     }
 
-    public Instant getToTime() {
+    public OffsetDateTime getToTime() {
         return toTime;
     }
 
-    public SessionInfo toTime(Instant toTime) {
+    public SessionInfo toTime(OffsetDateTime toTime) {
         this.toTime = toTime;
         return this;
     }
 
-    public void setToTime(Instant toTime) {
+    public void setToTime(OffsetDateTime toTime) {
         this.toTime = toTime;
     }
 

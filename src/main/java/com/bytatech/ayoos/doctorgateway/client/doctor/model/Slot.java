@@ -2,7 +2,7 @@ package com.bytatech.ayoos.doctorgateway.client.doctor.model;
 
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.OffsetDateTime;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -19,9 +19,9 @@ public class Slot{
     private LocalDate date;
 
    
-    private Instant fromTime;
+    private OffsetDateTime fromTime;
 
-    private Instant toTime;
+    private OffsetDateTime toTime;
 
     private Set<Status> statuses = new HashSet<>();
 
@@ -50,29 +50,29 @@ public class Slot{
         this.date = date;
     }
 
-    public Instant getFromTime() {
+    public OffsetDateTime getFromTime() {
         return fromTime;
     }
 
-    public Slot fromTime(Instant fromTime) {
+    public Slot fromTime(OffsetDateTime fromTime) {
         this.fromTime = fromTime;
         return this;
     }
 
-    public void setFromTime(Instant fromTime) {
+    public void setFromTime(OffsetDateTime fromTime) {
         this.fromTime = fromTime;
     }
 
-    public Instant getToTime() {
+    public OffsetDateTime getToTime() {
         return toTime;
     }
 
-    public Slot toTime(Instant toTime) {
+    public Slot toTime(OffsetDateTime toTime) {
         this.toTime = toTime;
         return this;
     }
 
-    public void setToTime(Instant toTime) {
+    public void setToTime(OffsetDateTime toTime) {
         this.toTime = toTime;
     }
 
