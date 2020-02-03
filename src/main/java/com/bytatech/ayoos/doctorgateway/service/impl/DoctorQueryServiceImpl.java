@@ -247,7 +247,7 @@ public	Set<Slot> createSlot(Long workPlaceId,LocalDate date, String doctorIdpCod
 	Set<Slot> slotSet = new HashSet<>(slotList); 
 	for(SessionInfo s:sessioninfoList) {
 		
-		Instant slotEndTime = null;
+		OffsetDateTime slotEndTime = null;
 		int i = 1;
 		do {
 	
