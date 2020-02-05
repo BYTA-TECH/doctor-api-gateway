@@ -208,7 +208,8 @@ jhipster:
 # ===================================================================
 
 # application:
-
+doctor:
+   url: 35.209.250.234:8083
 elasticsearch:
    host: 81b3d974a18b4c16bc3cdbb3595ffcf9.us-central1.gcp.cloud.es.io
    port: 9243

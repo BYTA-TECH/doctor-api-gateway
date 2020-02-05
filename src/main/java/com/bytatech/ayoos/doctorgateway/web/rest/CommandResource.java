@@ -130,8 +130,15 @@ public class CommandResource {
 	
 	
 	
+	//Appointment
 	
-	
+	/*@PostMapping("/processAppointmentRequest/{taskId}")
+	public ResponseEntity<com.bytatech.ayoos.client.appointment.model.CommandResource> getProcessAppointmentRequest(
+			@PathVariable String taskId, @RequestBody AppointmentConfirmationResponse appointmentConfirmationResponse) {
+		return appointmentCommandResourceApi.processAppointmentRequestUsingPOST(taskId,
+				appointmentConfirmationResponse);
+	}
+	*/
 	
 	
 	
