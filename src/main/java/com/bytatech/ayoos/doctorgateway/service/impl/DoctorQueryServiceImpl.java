@@ -73,7 +73,7 @@ public class DoctorQueryServiceImpl implements DoctorQueryService {
 		QueryBuilder dslQuery = QueryBuilders.boolQuery().filter(termQuery("doctorIdpCode.keyword", doctorIdpCode));
 		SearchSourceBuilder builder = new SearchSourceBuilder();
 
-		String[] include = new String[] { "doctorIdpCode", "specialization", "registerNumber", "practiceSince",
+		String[] include = new String[] { "id","doctorIdpCode", "specialization", "registerNumber", "practiceSince",
 				"firstName", "contactInfo.*", "doctorSettings.*", "paymentSettings.*" };
 		String[] exclude = new String[] { "workPlaces.*", "qualifications.*" };
 
