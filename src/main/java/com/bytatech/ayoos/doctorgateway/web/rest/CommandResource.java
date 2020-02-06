@@ -1,5 +1,8 @@
 package com.bytatech.ayoos.doctorgateway.web.rest;
 import java.net.URI;
+ 
+import com.bytatech.ayoos.doctorgateway.client.consultation.model.*;
+
 import java.net.URISyntaxException;
 import java.time.LocalDate;
 import java.util.List;
@@ -18,7 +21,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+ 
+import com.bytatech.ayoos.doctorgateway.client.consultation.model.NextTaskResource;
 import com.bytatech.ayoos.doctorgateway.client.doctor.model.*;
+import com.bytatech.ayoos.doctorgateway.service.ConsultationCommandService;
 import  com.bytatech.ayoos.doctorgateway.service.DoctorCommandService;
 /**
  * TODO Provide a detailed description here
@@ -30,6 +36,8 @@ import  com.bytatech.ayoos.doctorgateway.service.DoctorCommandService;
 public class CommandResource {
 	@Autowired
 	DoctorCommandService  doctorCommandService;
+	@Autowired
+	private  ConsultationCommandService consultationCommandService;
 	@PostMapping("/test")
 	public String test() {
 		return "success";
@@ -141,11 +149,36 @@ public class CommandResource {
 	*/
 	
 	
+	//Consultation
+	@PostMapping("/intiates")
+	public   ResponseEntity<NextTaskResource> initiateConsultation(){
+		return consultationCommandService.initiateConsultation();
+	}
+	@PostMapping("/basicCheckup/{processId}")
+	public ResponseEntity<NextTaskResource> basicCheckUpTask(@PathVariable String processId, @RequestBody BasicCheckUp basicCheckUp) {
+		return consultationCommandService.basicCheckUp( processId, basicCheckUp);
+		 
+	}
 	
-	
-	
-	
-	
+	@PostMapping("/requestPatientHistory/{processId}")
+	public ResponseEntity<NextTaskResource> requestPatientHistory(@PathVariable String processId, @RequestParam(value = "choice", required = false) String choice) {
+		return consultationCommandService.requestPatientHistory(processId,choice);
+		 
+	}
+	 @PostMapping("/patient/storeHistory/{processId}")
+		 public ResponseEntity<NextTaskResource> storeHistory(@PathVariable String processId, @RequestParam(value = "otp", required = false) String otp,@RequestParam(value = "choice", required = false) String choice) {  			
+			return consultationCommandService.storeHistory(processId,otp,choice);
+		}	     
+	@PostMapping("/consultPatient/{processId}")
+	public ResponseEntity<Consultation> consultPatient(@PathVariable String processId, @RequestBody Prescription prescription) {
+		return  consultationCommandService.consultPatient(processId,prescription);
+		 
+	}
+	@PostMapping("/savePatientPrescription/{processId}")
+	public ResponseEntity<NextTaskResource> patientPrescription(@PathVariable String processId, @RequestBody Prescription prescription) {
+		return consultationCommandService.patientPrescription(processId,prescription );
+		 
+	}
 	
 	
 	
