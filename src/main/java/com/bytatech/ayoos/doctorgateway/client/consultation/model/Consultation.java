@@ -1,6 +1,7 @@
 package com.bytatech.ayoos.doctorgateway.client.consultation.model;
 
 import java.util.Objects;
+
 import com.bytatech.ayoos.doctorgateway.client.consultation.model.BasicCheckUp;
 import com.bytatech.ayoos.doctorgateway.client.consultation.model.Diagnosis;
 import com.bytatech.ayoos.doctorgateway.client.consultation.model.Prescription;
@@ -9,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
