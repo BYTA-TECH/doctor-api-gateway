@@ -29,6 +29,7 @@ import org.springframework.http.ResponseEntity;
 import com.bytatech.ayoos.doctorgateway.client.doctor.model.*;
 
 @Service
+
 public class DoctorCommandServiceImpl  implements DoctorCommandService {
 	
 	@Autowired
