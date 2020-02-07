@@ -70,10 +70,10 @@ public class CommandResource {
 		  return  doctorCommandService.updateContactInfo (contactInfoDTO);
 	  }
 	 
-/*	  @DeleteMapping("/contact-infos/{id}")
+    @DeleteMapping("/contact-infos/{id}")
 	  public void deleteContactInfo(@PathVariable Long id){
-		   doctorCommandService.deleteContactInfoUsingDELETE(id);
-	  }*/
+		   doctorCommandService.deleteContactInfo(id);
+	  } 
 	  
 	  @PostMapping("/qualifications")
 	  public ResponseEntity<QualificationDTO> createQualification(@RequestBody QualificationDTO qualificationDTO){
@@ -84,10 +84,10 @@ public class CommandResource {
 		 return  doctorCommandService.updateQualification (qualificationDTO);
 	  }
 	  
-	  /*@DeleteMapping("/qualifications/{id}")
+	   @DeleteMapping("/qualifications/{id}")
 	  public void deleteQualification(@PathVariable Long id){
-		   doctorCommandService.deleteQualificationUsingDELETE(id);
-	  }*/
+		   doctorCommandService.deleteQualification(id);
+	  } 
 	  
 	  @PostMapping("/work-places")
 	  public ResponseEntity<WorkPlaceDTO> createWorkPlace(@RequestBody WorkPlaceDTO workPlaceDTO){
@@ -103,10 +103,10 @@ public class CommandResource {
 		  
 	  }
 	  
-	 /* @DeleteMapping("/work-places")
+	  @DeleteMapping("/work-places")
 	  public void deleteWorkPlace(@PathVariable Long id){
-		  doctorCommandService.deleteWorkPlaceUsingDELETE(id);
-	  }*/
+		  doctorCommandService.deleteWorkPlace(id);
+	  } 
 	  
 	
 	 //please wire this method instead of createSessionInfo

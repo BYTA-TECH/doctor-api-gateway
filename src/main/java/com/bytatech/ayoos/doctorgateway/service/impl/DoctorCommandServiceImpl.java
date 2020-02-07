@@ -84,7 +84,7 @@ public class DoctorCommandServiceImpl  implements DoctorCommandService {
 	  }
 	 
 	
-	  public void deleteContactInfo(  Long id){
+	  public void deleteContactInfo(Long id){
 		  contactInfoResourceApi.deleteContactInfoUsingDELETE(id);
 	  }
 	  
