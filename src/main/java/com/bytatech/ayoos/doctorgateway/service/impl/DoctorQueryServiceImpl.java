@@ -226,7 +226,7 @@ public class DoctorQueryServiceImpl implements DoctorQueryService {
 	public DoctorSettingsDTO findDoctorSettings(Long id){
 		QueryBuilder dslQuery = QueryBuilders.boolQuery().filter(termQuery("id",id));
 
-		SearchResponse searchResponse = serviceUtility.searchResponseForObject("contactinfo", dslQuery);
+		SearchResponse searchResponse = serviceUtility.searchResponseForObject("doctorsettings", dslQuery);
 
 		DoctorSettings doctorSettings=serviceUtility.getObjectResult(searchResponse, new DoctorSettings());
 	return	doctorSettingsMapper.toDto(doctorSettings);
