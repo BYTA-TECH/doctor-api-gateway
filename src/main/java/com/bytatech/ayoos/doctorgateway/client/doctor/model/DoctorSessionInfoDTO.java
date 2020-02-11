@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.Date;
+import java.time.*;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -21,7 +21,7 @@ public class DoctorSessionInfoDTO   {
   private LocalDate fromDate = null;
 
   @JsonProperty("fromTime")
-  private org.joda.time.* fromTime = null;
+  private LocalTime fromTime = null;
 
   @JsonProperty("id")
   private Long id = null;
@@ -30,7 +30,7 @@ public class DoctorSessionInfoDTO   {
   private LocalDate toDate = null;
 
   @JsonProperty("toTime")
-  private org.joda.time.* toTime = null;
+  private LocalTime toTime = null;
 
   @JsonProperty("weekday")
   private Long weekday = null;
@@ -56,7 +56,7 @@ public class DoctorSessionInfoDTO   {
     this.fromDate = fromDate;
   }
 
-  public DoctorSessionInfoDTO fromTime(org.joda.time.* fromTime) {
+  public DoctorSessionInfoDTO fromTime(LocalTime fromTime) {
     this.fromTime = fromTime;
     return this;
   }
@@ -69,11 +69,11 @@ public class DoctorSessionInfoDTO   {
 
   @Valid
 
-  public org.joda.time.* getFromTime() {
+  public LocalTime getFromTime() {
     return fromTime;
   }
 
-  public void setFromTime(org.joda.time.* fromTime) {
+  public void setFromTime(LocalTime fromTime) {
     this.fromTime = fromTime;
   }
 
@@ -118,7 +118,7 @@ public class DoctorSessionInfoDTO   {
     this.toDate = toDate;
   }
 
-  public DoctorSessionInfoDTO toTime(org.joda.time.* toTime) {
+  public DoctorSessionInfoDTO toTime(LocalTime toTime) {
     this.toTime = toTime;
     return this;
   }
@@ -131,11 +131,11 @@ public class DoctorSessionInfoDTO   {
 
   @Valid
 
-  public org.joda.time.* getToTime() {
+  public LocalTime getToTime() {
     return toTime;
   }
 
-  public void setToTime(org.joda.time.* toTime) {
+  public void setToTime(LocalTime toTime) {
     this.toTime = toTime;
   }
 
