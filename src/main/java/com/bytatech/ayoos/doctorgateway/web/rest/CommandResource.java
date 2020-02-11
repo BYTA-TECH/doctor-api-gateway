@@ -111,9 +111,8 @@ public class CommandResource {
 	
 	 //please wire this method instead of createSessionInfo
 	  @PostMapping("/sessionInfobydate")
-		 public ResponseEntity<List<SessionInfoDTO>> createSessionInfoByDates(@RequestBody SessionInfoDTO sessionInfoDTO,
-					@PathVariable String fromDate,@PathVariable String toDate){
-			return   doctorCommandService.createSessionInfoByDates(sessionInfoDTO, toDate, fromDate);
+		 public ResponseEntity<List<SessionInfoDTO>>  createSessionInfoByDates(List<DoctorSessionInfoDTO> doctorSessionInfoDTO){
+			return   doctorCommandService. createSessionInfoByDates(doctorSessionInfoDTO);
 		 }
 
 	@PostMapping("/paymentSettings")

@@ -124,10 +124,9 @@ public class DoctorCommandServiceImpl  implements DoctorCommandService {
 	
 	 //please wire this method instead of createSessionInfo
 	
-		 public ResponseEntity<List<SessionInfoDTO>> createSessionInfoByDates(SessionInfoDTO sessionInfoDTO,
-					  String fromDate,  String toDate){
+		 public ResponseEntity<List<SessionInfoDTO>> createSessionInfoByDates(List<DoctorSessionInfoDTO> doctorSessionInfoDTO){
 			 
-			 return  sessionInfoAPi.setSessionByDatesUsingPOST(fromDate, toDate, sessionInfoDTO);
+			 return  sessionInfoAPi.setSessionByDatesUsingPOST(doctorSessionInfoDTO);
 			 
 			
 		 }

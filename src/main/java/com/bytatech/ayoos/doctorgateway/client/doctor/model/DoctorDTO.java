@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.time.*;
+import java.util.Date;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -14,11 +14,14 @@ import javax.validation.constraints.*;
  * DoctorDTO
  */
 @Validated
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-03T12:20:38.958+05:30[Asia/Kolkata]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-11T10:00:57.652+05:30[Asia/Kolkata]")
 
 public class DoctorDTO   {
   @JsonProperty("contactInfoId")
   private Long contactInfoId = null;
+
+  @JsonProperty("dmsId")
+  private String dmsId = null;
 
   @JsonProperty("doctorIdpCode")
   private String doctorIdpCode = null;
@@ -74,6 +77,26 @@ public class DoctorDTO   {
 
   public void setContactInfoId(Long contactInfoId) {
     this.contactInfoId = contactInfoId;
+  }
+
+  public DoctorDTO dmsId(String dmsId) {
+    this.dmsId = dmsId;
+    return this;
+  }
+
+  /**
+   * Get dmsId
+   * @return dmsId
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public String getDmsId() {
+    return dmsId;
+  }
+
+  public void setDmsId(String dmsId) {
+    this.dmsId = dmsId;
   }
 
   public DoctorDTO doctorIdpCode(String doctorIdpCode) {
@@ -328,6 +351,7 @@ public class DoctorDTO   {
     }
     DoctorDTO doctorDTO = (DoctorDTO) o;
     return Objects.equals(this.contactInfoId, doctorDTO.contactInfoId) &&
+        Objects.equals(this.dmsId, doctorDTO.dmsId) &&
         Objects.equals(this.doctorIdpCode, doctorDTO.doctorIdpCode) &&
         Objects.equals(this.doctorSettingsId, doctorDTO.doctorSettingsId) &&
         Objects.equals(this.email, doctorDTO.email) &&
@@ -344,7 +368,7 @@ public class DoctorDTO   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(contactInfoId, doctorIdpCode, doctorSettingsId, email, firstName, id, imageLink, paymentSettingsId, phoneNumber, practiceSince, registerNumber, specialization, totalRating);
+    return Objects.hash(contactInfoId, dmsId, doctorIdpCode, doctorSettingsId, email, firstName, id, imageLink, paymentSettingsId, phoneNumber, practiceSince, registerNumber, specialization, totalRating);
   }
 
   @Override
@@ -353,6 +377,7 @@ public class DoctorDTO   {
     sb.append("class DoctorDTO {\n");
     
     sb.append("    contactInfoId: ").append(toIndentedString(contactInfoId)).append("\n");
+    sb.append("    dmsId: ").append(toIndentedString(dmsId)).append("\n");
     sb.append("    doctorIdpCode: ").append(toIndentedString(doctorIdpCode)).append("\n");
     sb.append("    doctorSettingsId: ").append(toIndentedString(doctorSettingsId)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");

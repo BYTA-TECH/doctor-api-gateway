@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 
 import com.bytatech.ayoos.doctorgateway.client.doctor.model.ContactInfoDTO;
 import com.bytatech.ayoos.doctorgateway.client.doctor.model.DoctorDTO;
+import com.bytatech.ayoos.doctorgateway.client.doctor.model.DoctorSessionInfoDTO;
 import com.bytatech.ayoos.doctorgateway.client.doctor.model.DoctorSettingsDTO;
 import com.bytatech.ayoos.doctorgateway.client.doctor.model.PaymentSettingsDTO;
 import com.bytatech.ayoos.doctorgateway.client.doctor.model.QualificationDTO;
@@ -36,8 +37,7 @@ public interface DoctorCommandService {
 
 	public void deleteWorkPlace(Long id);
 
-	public ResponseEntity<List<SessionInfoDTO>> createSessionInfoByDates(SessionInfoDTO sessionInfoDTO,
-			String fromDate, String toDate);
+	public ResponseEntity<List<SessionInfoDTO>>  createSessionInfoByDates(List<DoctorSessionInfoDTO> doctorSessionInfoDTO);
 
 	public ResponseEntity<PaymentSettingsDTO> createPaymentSetting(PaymentSettingsDTO paymentSettingsDTO);
 

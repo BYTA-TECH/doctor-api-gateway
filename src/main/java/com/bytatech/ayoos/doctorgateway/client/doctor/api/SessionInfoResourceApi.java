@@ -5,6 +5,8 @@
  */
 package com.bytatech.ayoos.doctorgateway.client.doctor.api;
 
+import com.bytatech.ayoos.doctorgateway.client.doctor.model.DoctorSessionInfoDTO;
+import java.util.List;
 import com.bytatech.ayoos.doctorgateway.client.doctor.model.SessionInfoDTO;
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
@@ -25,7 +27,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-03T12:20:38.958+05:30[Asia/Kolkata]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-11T10:00:57.652+05:30[Asia/Kolkata]")
 
 @Api(value = "SessionInfoResource", description = "the SessionInfoResource API")
 public interface SessionInfoResourceApi {
@@ -86,11 +88,11 @@ public interface SessionInfoResourceApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/api/sessionInfoByDate/{fromDate}/{toDate}",
+    @RequestMapping(value = "/api/sessionInfoByDate",
         produces = "*/*", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<List<SessionInfoDTO>> setSessionByDatesUsingPOST(@ApiParam(value = "fromDate",required=true) @PathVariable("fromDate") String fromDate,@ApiParam(value = "toDate",required=true) @PathVariable("toDate") String toDate,@ApiParam(value = "sessionList" ,required=true )  @Valid @RequestBody SessionInfoDTO sessionInfoDTO);
+    ResponseEntity<List<SessionInfoDTO>> setSessionByDatesUsingPOST(@ApiParam(value = "doctorSessionInfoDTO" ,required=true )  @Valid @RequestBody List<DoctorSessionInfoDTO> doctorSessionInfoDTO);
 
 
     @ApiOperation(value = "updateSessionInfo", nickname = "updateSessionInfoUsingPUT", notes = "", response = SessionInfoDTO.class, tags={ "session-info-resource", })
