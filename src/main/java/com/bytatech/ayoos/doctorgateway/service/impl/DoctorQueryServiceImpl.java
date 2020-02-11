@@ -165,7 +165,7 @@ public class DoctorQueryServiceImpl implements DoctorQueryService {
 
 	@Override
 	public Page<Qualification> findAllQualificationByDoctorIdpCode(String doctorIdpCode, Pageable pageable) {
-		QueryBuilder dslQuery = QueryBuilders.boolQuery().filter(termQuery("doctor.doctorIdpCode", doctorIdpCode));
+		QueryBuilder dslQuery = QueryBuilders.boolQuery().filter(termQuery("doctor.doctorIdpCode.keyword", doctorIdpCode));
 		SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
 		searchSourceBuilder.query(dslQuery);
 		SearchResponse searchResponse = serviceUtility.searchResponseForPage("qualification", searchSourceBuilder,
