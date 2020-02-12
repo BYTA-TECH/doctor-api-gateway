@@ -111,8 +111,8 @@ public class CommandResource {
 	
 	 //please wire this method instead of createSessionInfo
 	  @PostMapping("/sessionInfobydate")
-		 public ResponseEntity<List<SessionInfoDTO>>  createSessionInfoByDates(List<DoctorSessionInfoDTO> doctorSessionInfoDTO){
-			return   doctorCommandService. createSessionInfoByDates(doctorSessionInfoDTO);
+		 public ResponseEntity<List<SessionInfoDTO>>  createSessionInfoByDates(@RequestBody List<DoctorSessionInfoDTO> doctorSessionInfoDTO){
+			return   doctorCommandService.createSessionInfoByDates(doctorSessionInfoDTO);
 		 }
 
 	@PostMapping("/paymentSettings")
@@ -179,6 +179,11 @@ public class CommandResource {
 		 
 	}
 	
+	//warning :dont delete the method, this one is used for only to get DoctorSessionInfoDTO dto in front end for further info contact Sooraj
+	@PostMapping("/Details")
+	public DoctorSessionInfoDTO createDetails(@RequestBody DoctorSessionInfoDTO doctorSessionInfoDTO) {
+		return doctorSessionInfoDTO;
+	}
 	
 	
 	
