@@ -95,8 +95,11 @@ public class QueryResource {
 		return  ResponseEntity.ok(doctorQueryService.findDoctorSettings(id));
 	}
 
-	@GetMapping("/paymentSettings/{id}")
-	public ResponseEntity<PaymentSettingsDTO> findPaymentSettings(@PathVariable Long id) {
-		return ResponseEntity.ok(doctorQueryService.findPaymentSettings(id));
+
+	
+	@GetMapping("/findPaymentSettingsByDoctorIdpCode/{doctorIdpCode}")
+	public ResponseEntity<PaymentSettingsDTO> findPaymentSettingsByDoctorIdpCode(@PathVariable String doctorIdpCode)
+	{
+		return ResponseEntity.ok(doctorQueryService.findPaymentSettingsByDoctorIdpCode(doctorIdpCode));
 	}
 }

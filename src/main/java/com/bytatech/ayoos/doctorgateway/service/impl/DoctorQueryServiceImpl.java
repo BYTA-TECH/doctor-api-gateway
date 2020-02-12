@@ -332,6 +332,14 @@ private List<Slot>  findSlotbyStatus(LocalDate date,String doctorIdpCode,String 
 	
 }
 
+public PaymentSettingsDTO findPaymentSettingsByDoctorIdpCode(String doctorIdpCode)
+{
+	QueryBuilder dslQuery = QueryBuilders.boolQuery().filter(termQuery("doctorIdpCode.keyword",doctorIdpCode));
+	SearchResponse searchResponse = serviceUtility.searchResponseForObject("doctor", dslQuery);
+	Doctor doctor= serviceUtility.getObjectResult(searchResponse, new Doctor());
+	PaymentSettings paymentSettings=doctor.getPaymentSettings();
+	return	paymentSettingsMapper.toDto(paymentSettings);
+}
 
 
 

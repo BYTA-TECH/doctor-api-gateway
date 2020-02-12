@@ -17,7 +17,8 @@ public interface DoctorQueryService{
 	//public Page<Slot> findAllReservedSlotByDoctorIdpCode(String doctorIdpCode, Pageable pageable) ;	
 	public Page<SessionInfo> findSessionInfoByDoctorsWorkPlace(String doctorIdpCode, Long workPlaceId, Pageable pageable);
 	public DoctorSettingsDTO findDoctorSettings(Long id); 
-	public PaymentSettingsDTO findPaymentSettings(Long id);
+	//public PaymentSettingsDTO findPaymentSettings(Long id);
 	public Set<Slot> createSlot(Long workPlaceId,LocalDate date,String doctorIdpCode,Pageable pageable);
+	public PaymentSettingsDTO findPaymentSettingsByDoctorIdpCode(String doctorIdpCode);
 	
 }
