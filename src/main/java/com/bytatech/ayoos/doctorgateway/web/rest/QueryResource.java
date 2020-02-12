@@ -90,9 +90,9 @@ public class QueryResource {
 		return doctorQueryService.createSlot( workPlaceId,date,doctorIdpCode, pageable);
 	}
 
-	@GetMapping("/doctorSettings/{id}")
-	public ResponseEntity<DoctorSettingsDTO> findDoctorSettings(@PathVariable Long id) {
-		return  ResponseEntity.ok(doctorQueryService.findDoctorSettings(id));
+	@GetMapping("/doctorSettings/{doctorIdpCode}")
+	public ResponseEntity<DoctorSettingsDTO> findDoctorSettings(@PathVariable String doctorIdpCode) {
+		return  ResponseEntity.ok(doctorQueryService.findDoctorSettings(doctorIdpCode));
 	}
 
 

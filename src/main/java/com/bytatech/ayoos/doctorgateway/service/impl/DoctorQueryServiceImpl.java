@@ -342,7 +342,15 @@ public PaymentSettingsDTO findPaymentSettingsByDoctorIdpCode(String doctorIdpCod
 }
 
 
+public DoctorSettingsDTO findDoctorSettings(String doctorIdpCode){
+	QueryBuilder dslQuery = QueryBuilders.boolQuery().filter(termQuery("doctorIdpCode.keyword",doctorIdpCode));
+	SearchResponse searchResponse = serviceUtility.searchResponseForObject("doctor", dslQuery);
+	Doctor doctor= serviceUtility.getObjectResult(searchResponse, new Doctor());
+	DoctorSettings doctorSettings=doctor.getDoctorSettings();
+	return	doctorSettingsMapper.toDto(doctorSettings);
 
+	
+}
 
 
 
