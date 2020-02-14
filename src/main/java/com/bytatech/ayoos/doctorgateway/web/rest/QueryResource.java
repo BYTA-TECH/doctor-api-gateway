@@ -85,7 +85,7 @@ public class QueryResource {
 	}
 */
 	//findSlots to createSlot
-	@GetMapping("/Dr-slots/{workPlaceId}/{date}/{doctorId}")
+	@GetMapping("/Dr-slots/{workPlaceId}/{date}/{doctorIdpCode}")
 	public Set<Slot> createSlot(@PathVariable Long workPlaceId,@PathVariable LocalDate date, @PathVariable String doctorIdpCode,Pageable pageable) {
 		return doctorQueryService.createSlot( workPlaceId,date,doctorIdpCode, pageable);
 	}
