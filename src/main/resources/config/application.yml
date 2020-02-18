@@ -215,3 +215,4 @@ elasticsearch:
    port: 9243
    username: elastic
    password: kUaIPSZLw5WJERdn219tvVW3
+    

@@ -5,7 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.time.*;
+//import java.time.*;
+import org.joda.time.*;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -14,23 +15,26 @@ import javax.validation.constraints.*;
  * DoctorSessionInfoDTO
  */
 @Validated
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-11T10:00:57.652+05:30[Asia/Kolkata]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-18T15:52:38.246+05:30[Asia/Calcutta]")
 
 public class DoctorSessionInfoDTO   {
   @JsonProperty("fromDate")
   private LocalDate fromDate = null;
 
   @JsonProperty("fromTime")
-  private LocalTime fromTime = null;
+  private DateTimeZone fromTime = null;
 
   @JsonProperty("id")
   private Long id = null;
+
+  @JsonProperty("interval")
+  private Long interval = null;
 
   @JsonProperty("toDate")
   private LocalDate toDate = null;
 
   @JsonProperty("toTime")
-  private LocalTime toTime = null;
+  private DateTimeZone toTime = null;
 
   @JsonProperty("weekday")
   private Long weekday = null;
@@ -56,7 +60,7 @@ public class DoctorSessionInfoDTO   {
     this.fromDate = fromDate;
   }
 
-  public DoctorSessionInfoDTO fromTime(LocalTime fromTime) {
+  public DoctorSessionInfoDTO fromTime(DateTimeZone fromTime) {
     this.fromTime = fromTime;
     return this;
   }
@@ -69,11 +73,11 @@ public class DoctorSessionInfoDTO   {
 
   @Valid
 
-  public LocalTime getFromTime() {
+  public DateTimeZone getFromTime() {
     return fromTime;
   }
 
-  public void setFromTime(LocalTime fromTime) {
+  public void setFromTime(DateTimeZone fromTime) {
     this.fromTime = fromTime;
   }
 
@@ -97,6 +101,26 @@ public class DoctorSessionInfoDTO   {
     this.id = id;
   }
 
+  public DoctorSessionInfoDTO interval(Long interval) {
+    this.interval = interval;
+    return this;
+  }
+
+  /**
+   * Get interval
+   * @return interval
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public Long getInterval() {
+    return interval;
+  }
+
+  public void setInterval(Long interval) {
+    this.interval = interval;
+  }
+
   public DoctorSessionInfoDTO toDate(LocalDate toDate) {
     this.toDate = toDate;
     return this;
@@ -118,7 +142,7 @@ public class DoctorSessionInfoDTO   {
     this.toDate = toDate;
   }
 
-  public DoctorSessionInfoDTO toTime(LocalTime toTime) {
+  public DoctorSessionInfoDTO toTime(DateTimeZone toTime) {
     this.toTime = toTime;
     return this;
   }
@@ -131,11 +155,11 @@ public class DoctorSessionInfoDTO   {
 
   @Valid
 
-  public LocalTime getToTime() {
+  public DateTimeZone getToTime() {
     return toTime;
   }
 
-  public void setToTime(LocalTime toTime) {
+  public void setToTime(DateTimeZone toTime) {
     this.toTime = toTime;
   }
 
@@ -172,6 +196,7 @@ public class DoctorSessionInfoDTO   {
     return Objects.equals(this.fromDate, doctorSessionInfoDTO.fromDate) &&
         Objects.equals(this.fromTime, doctorSessionInfoDTO.fromTime) &&
         Objects.equals(this.id, doctorSessionInfoDTO.id) &&
+        Objects.equals(this.interval, doctorSessionInfoDTO.interval) &&
         Objects.equals(this.toDate, doctorSessionInfoDTO.toDate) &&
         Objects.equals(this.toTime, doctorSessionInfoDTO.toTime) &&
         Objects.equals(this.weekday, doctorSessionInfoDTO.weekday);
@@ -179,7 +204,7 @@ public class DoctorSessionInfoDTO   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(fromDate, fromTime, id, toDate, toTime, weekday);
+    return Objects.hash(fromDate, fromTime, id, interval, toDate, toTime, weekday);
   }
 
   @Override
@@ -190,6 +215,7 @@ public class DoctorSessionInfoDTO   {
     sb.append("    fromDate: ").append(toIndentedString(fromDate)).append("\n");
     sb.append("    fromTime: ").append(toIndentedString(fromTime)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    toDate: ").append(toIndentedString(toDate)).append("\n");
     sb.append("    toTime: ").append(toIndentedString(toTime)).append("\n");
     sb.append("    weekday: ").append(toIndentedString(weekday)).append("\n");
