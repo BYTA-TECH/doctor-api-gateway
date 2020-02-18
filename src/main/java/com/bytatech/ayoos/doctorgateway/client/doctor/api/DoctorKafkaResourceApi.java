@@ -26,7 +26,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-11T10:00:57.652+05:30[Asia/Kolkata]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-18T14:40:20.184+05:30[Asia/Calcutta]")
 
 @Api(value = "DoctorKafkaResource", description = "the DoctorKafkaResource API")
 public interface DoctorKafkaResourceApi {

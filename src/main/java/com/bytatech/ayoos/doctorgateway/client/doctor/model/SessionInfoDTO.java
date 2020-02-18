@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
-import java.time.*;
+import java.util.Date;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -15,7 +15,7 @@ import javax.validation.constraints.*;
  * SessionInfoDTO
  */
 @Validated
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-11T10:00:57.652+05:30[Asia/Kolkata]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-18T14:40:20.184+05:30[Asia/Calcutta]")
 
 public class SessionInfoDTO   {
   @JsonProperty("date")
@@ -35,6 +35,9 @@ public class SessionInfoDTO   {
 
   @JsonProperty("toTime")
   private OffsetDateTime toTime = null;
+
+  @JsonProperty("weekDay")
+  private Long weekDay = null;
 
   @JsonProperty("workPlaceId")
   private Long workPlaceId = null;
@@ -162,6 +165,26 @@ public class SessionInfoDTO   {
     this.toTime = toTime;
   }
 
+  public SessionInfoDTO weekDay(Long weekDay) {
+    this.weekDay = weekDay;
+    return this;
+  }
+
+  /**
+   * Get weekDay
+   * @return weekDay
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public Long getWeekDay() {
+    return weekDay;
+  }
+
+  public void setWeekDay(Long weekDay) {
+    this.weekDay = weekDay;
+  }
+
   public SessionInfoDTO workPlaceId(Long workPlaceId) {
     this.workPlaceId = workPlaceId;
     return this;
@@ -198,12 +221,13 @@ public class SessionInfoDTO   {
         Objects.equals(this.interval, sessionInfoDTO.interval) &&
         Objects.equals(this.sessionName, sessionInfoDTO.sessionName) &&
         Objects.equals(this.toTime, sessionInfoDTO.toTime) &&
+        Objects.equals(this.weekDay, sessionInfoDTO.weekDay) &&
         Objects.equals(this.workPlaceId, sessionInfoDTO.workPlaceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(date, fromTime, id, interval, sessionName, toTime, workPlaceId);
+    return Objects.hash(date, fromTime, id, interval, sessionName, toTime, weekDay, workPlaceId);
   }
 
   @Override
@@ -217,6 +241,7 @@ public class SessionInfoDTO   {
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    sessionName: ").append(toIndentedString(sessionName)).append("\n");
     sb.append("    toTime: ").append(toIndentedString(toTime)).append("\n");
+    sb.append("    weekDay: ").append(toIndentedString(weekDay)).append("\n");
     sb.append("    workPlaceId: ").append(toIndentedString(workPlaceId)).append("\n");
     sb.append("}");
     return sb.toString();
