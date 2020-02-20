@@ -4,9 +4,8 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-//import java.time.*;
-import org.joda.time.*;
+import io.swagger.annotations.ApiModelProperty;import java.time.*;
+//import org.joda.time.*;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -22,7 +21,7 @@ public class DoctorSessionInfoDTO   {
   private LocalDate fromDate = null;
 
   @JsonProperty("fromTime")
-  private DateTimeZone fromTime = null;
+  private LocalTime fromTime = null;
 
   @JsonProperty("id")
   private Long id = null;
@@ -34,7 +33,7 @@ public class DoctorSessionInfoDTO   {
   private LocalDate toDate = null;
 
   @JsonProperty("toTime")
-  private DateTimeZone toTime = null;
+  private LocalTime toTime = null;
 
   @JsonProperty("weekday")
   private Long weekday = null;
@@ -60,7 +59,7 @@ public class DoctorSessionInfoDTO   {
     this.fromDate = fromDate;
   }
 
-  public DoctorSessionInfoDTO fromTime(DateTimeZone fromTime) {
+  public DoctorSessionInfoDTO fromTime(LocalTime fromTime) {
     this.fromTime = fromTime;
     return this;
   }
@@ -73,11 +72,11 @@ public class DoctorSessionInfoDTO   {
 
   @Valid
 
-  public DateTimeZone getFromTime() {
+  public LocalTime getFromTime() {
     return fromTime;
   }
 
-  public void setFromTime(DateTimeZone fromTime) {
+  public void setFromTime(LocalTime fromTime) {
     this.fromTime = fromTime;
   }
 
@@ -142,7 +141,7 @@ public class DoctorSessionInfoDTO   {
     this.toDate = toDate;
   }
 
-  public DoctorSessionInfoDTO toTime(DateTimeZone toTime) {
+  public DoctorSessionInfoDTO toTime(LocalTime toTime) {
     this.toTime = toTime;
     return this;
   }
@@ -155,11 +154,11 @@ public class DoctorSessionInfoDTO   {
 
   @Valid
 
-  public DateTimeZone getToTime() {
+  public LocalTime getToTime() {
     return toTime;
   }
 
-  public void setToTime(DateTimeZone toTime) {
+  public void setToTime(LocalTime toTime) {
     this.toTime = toTime;
   }
 
