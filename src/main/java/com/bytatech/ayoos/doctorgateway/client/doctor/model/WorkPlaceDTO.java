@@ -13,11 +13,14 @@ import javax.validation.constraints.*;
  * WorkPlaceDTO
  */
 @Validated
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-18T15:52:38.246+05:30[Asia/Calcutta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-26T11:55:24.751+05:30[Asia/Calcutta]")
 
 public class WorkPlaceDTO   {
   @JsonProperty("doctorId")
   private Long doctorId = null;
+
+  @JsonProperty("doctorIdpCode")
+  private String doctorIdpCode = null;
 
   @JsonProperty("id")
   private Long id = null;
@@ -49,6 +52,26 @@ public class WorkPlaceDTO   {
 
   public void setDoctorId(Long doctorId) {
     this.doctorId = doctorId;
+  }
+
+  public WorkPlaceDTO doctorIdpCode(String doctorIdpCode) {
+    this.doctorIdpCode = doctorIdpCode;
+    return this;
+  }
+
+  /**
+   * Get doctorIdpCode
+   * @return doctorIdpCode
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public String getDoctorIdpCode() {
+    return doctorIdpCode;
+  }
+
+  public void setDoctorIdpCode(String doctorIdpCode) {
+    this.doctorIdpCode = doctorIdpCode;
   }
 
   public WorkPlaceDTO id(Long id) {
@@ -142,6 +165,7 @@ public class WorkPlaceDTO   {
     }
     WorkPlaceDTO workPlaceDTO = (WorkPlaceDTO) o;
     return Objects.equals(this.doctorId, workPlaceDTO.doctorId) &&
+        Objects.equals(this.doctorIdpCode, workPlaceDTO.doctorIdpCode) &&
         Objects.equals(this.id, workPlaceDTO.id) &&
         Objects.equals(this.location, workPlaceDTO.location) &&
         Objects.equals(this.locationName, workPlaceDTO.locationName) &&
@@ -150,7 +174,7 @@ public class WorkPlaceDTO   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(doctorId, id, location, locationName, name);
+    return Objects.hash(doctorId, doctorIdpCode, id, location, locationName, name);
   }
 
   @Override
@@ -159,6 +183,7 @@ public class WorkPlaceDTO   {
     sb.append("class WorkPlaceDTO {\n");
     
     sb.append("    doctorId: ").append(toIndentedString(doctorId)).append("\n");
+    sb.append("    doctorIdpCode: ").append(toIndentedString(doctorIdpCode)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    locationName: ").append(toIndentedString(locationName)).append("\n");

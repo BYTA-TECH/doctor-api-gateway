@@ -12,6 +12,7 @@ import com.bytatech.ayoos.doctorgateway.client.doctor.model.DoctorSettingsDTO;
 import com.bytatech.ayoos.doctorgateway.client.doctor.model.PaymentSettingsDTO;
 import com.bytatech.ayoos.doctorgateway.client.doctor.model.QualificationDTO;
 import com.bytatech.ayoos.doctorgateway.client.doctor.model.SessionInfoDTO;
+import com.bytatech.ayoos.doctorgateway.client.doctor.model.TimingDetailDTO;
 import com.bytatech.ayoos.doctorgateway.client.doctor.model.WorkPlaceDTO;
 
 public interface DoctorCommandService {
@@ -37,7 +38,7 @@ public interface DoctorCommandService {
 
 	public void deleteWorkPlace(Long id);
 
-	public ResponseEntity<List<SessionInfoDTO>>  createSessionInfoByDates(List<DoctorSessionInfoDTO> doctorSessionInfoDTO);
+	public ResponseEntity<List<SessionInfoDTO>>  createSessionInfoByDates(List<TimingDetailDTO> timingDetailDTO);
 
 	public ResponseEntity<PaymentSettingsDTO> createPaymentSetting(PaymentSettingsDTO paymentSettingsDTO);
 

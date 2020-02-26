@@ -1,5 +1,6 @@
 package com.bytatech.ayoos.doctorgateway.service.mapper;
 
+
 import com.bytatech.ayoos.doctorgateway.client.doctor.model.*;
 
 import org.mapstruct.*;
@@ -24,8 +25,6 @@ public interface DoctorMapper extends EntityMapper<DoctorDTO, Doctor> {
     @Mapping(target = "removeQualification", ignore = true)
     @Mapping(target = "userRatingReviews", ignore = true)
     @Mapping(target = "removeUserRatingReview", ignore = true)
-    @Mapping(target = "slots", ignore = true)
-    @Mapping(target = "removeSlot", ignore = true)
     Doctor toEntity(DoctorDTO doctorDTO);
 
     default Doctor fromId(Long id) {

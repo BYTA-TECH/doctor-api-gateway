@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
-import java.time.*;
+import java.util.Date;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -15,11 +17,14 @@ import javax.validation.constraints.*;
  * SessionInfoDTO
  */
 @Validated
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-18T15:52:38.246+05:30[Asia/Calcutta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-26T11:55:24.751+05:30[Asia/Calcutta]")
 
 public class SessionInfoDTO   {
   @JsonProperty("date")
   private LocalDate date = null;
+
+  @JsonProperty("doctorIdpCode")
+  private String doctorIdpCode = null;
 
   @JsonProperty("fromTime")
   private OffsetDateTime fromTime = null;
@@ -32,6 +37,9 @@ public class SessionInfoDTO   {
 
   @JsonProperty("sessionName")
   private String sessionName = null;
+
+  @JsonProperty("statusId")
+  private Long statusId = null;
 
   @JsonProperty("toTime")
   private OffsetDateTime toTime = null;
@@ -61,6 +69,26 @@ public class SessionInfoDTO   {
 
   public void setDate(LocalDate date) {
     this.date = date;
+  }
+
+  public SessionInfoDTO doctorIdpCode(String doctorIdpCode) {
+    this.doctorIdpCode = doctorIdpCode;
+    return this;
+  }
+
+  /**
+   * Get doctorIdpCode
+   * @return doctorIdpCode
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public String getDoctorIdpCode() {
+    return doctorIdpCode;
+  }
+
+  public void setDoctorIdpCode(String doctorIdpCode) {
+    this.doctorIdpCode = doctorIdpCode;
   }
 
   public SessionInfoDTO fromTime(OffsetDateTime fromTime) {
@@ -144,6 +172,26 @@ public class SessionInfoDTO   {
     this.sessionName = sessionName;
   }
 
+  public SessionInfoDTO statusId(Long statusId) {
+    this.statusId = statusId;
+    return this;
+  }
+
+  /**
+   * Get statusId
+   * @return statusId
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public Long getStatusId() {
+    return statusId;
+  }
+
+  public void setStatusId(Long statusId) {
+    this.statusId = statusId;
+  }
+
   public SessionInfoDTO toTime(OffsetDateTime toTime) {
     this.toTime = toTime;
     return this;
@@ -216,10 +264,12 @@ public class SessionInfoDTO   {
     }
     SessionInfoDTO sessionInfoDTO = (SessionInfoDTO) o;
     return Objects.equals(this.date, sessionInfoDTO.date) &&
+        Objects.equals(this.doctorIdpCode, sessionInfoDTO.doctorIdpCode) &&
         Objects.equals(this.fromTime, sessionInfoDTO.fromTime) &&
         Objects.equals(this.id, sessionInfoDTO.id) &&
         Objects.equals(this.interval, sessionInfoDTO.interval) &&
         Objects.equals(this.sessionName, sessionInfoDTO.sessionName) &&
+        Objects.equals(this.statusId, sessionInfoDTO.statusId) &&
         Objects.equals(this.toTime, sessionInfoDTO.toTime) &&
         Objects.equals(this.weekDay, sessionInfoDTO.weekDay) &&
         Objects.equals(this.workPlaceId, sessionInfoDTO.workPlaceId);
@@ -227,7 +277,7 @@ public class SessionInfoDTO   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(date, fromTime, id, interval, sessionName, toTime, weekDay, workPlaceId);
+    return Objects.hash(date, doctorIdpCode, fromTime, id, interval, sessionName, statusId, toTime, weekDay, workPlaceId);
   }
 
   @Override
@@ -236,10 +286,12 @@ public class SessionInfoDTO   {
     sb.append("class SessionInfoDTO {\n");
     
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
+    sb.append("    doctorIdpCode: ").append(toIndentedString(doctorIdpCode)).append("\n");
     sb.append("    fromTime: ").append(toIndentedString(fromTime)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    sessionName: ").append(toIndentedString(sessionName)).append("\n");
+    sb.append("    statusId: ").append(toIndentedString(statusId)).append("\n");
     sb.append("    toTime: ").append(toIndentedString(toTime)).append("\n");
     sb.append("    weekDay: ").append(toIndentedString(weekDay)).append("\n");
     sb.append("    workPlaceId: ").append(toIndentedString(workPlaceId)).append("\n");

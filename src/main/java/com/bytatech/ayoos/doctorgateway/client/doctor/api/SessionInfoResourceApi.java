@@ -5,9 +5,9 @@
  */
 package com.bytatech.ayoos.doctorgateway.client.doctor.api;
 
-import com.bytatech.ayoos.doctorgateway.client.doctor.model.DoctorSessionInfoDTO;
 import java.util.List;
 import com.bytatech.ayoos.doctorgateway.client.doctor.model.SessionInfoDTO;
+import com.bytatech.ayoos.doctorgateway.client.doctor.model.TimingDetailDTO;
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -27,7 +27,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-18T15:52:38.246+05:30[Asia/Calcutta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-26T11:55:24.751+05:30[Asia/Calcutta]")
 
 @Api(value = "SessionInfoResource", description = "the SessionInfoResource API")
 public interface SessionInfoResourceApi {
@@ -104,7 +104,7 @@ public interface SessionInfoResourceApi {
         produces = "*/*", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<List<SessionInfoDTO>> setSessionByDatesUsingPOST(@ApiParam(value = "doctorSessionInfoDTO" ,required=true )  @Valid @RequestBody List<DoctorSessionInfoDTO> doctorSessionInfoDTO);
+    ResponseEntity<List<SessionInfoDTO>> setSessionByDatesUsingPOST(@ApiParam(value = "timingDetailDTO" ,required=true )  @Valid @RequestBody List<TimingDetailDTO> timingDetailDTO);
 
 
     @ApiOperation(value = "updateSessionInfo", nickname = "updateSessionInfoUsingPUT", notes = "", response = SessionInfoDTO.class, tags={ "session-info-resource", })
