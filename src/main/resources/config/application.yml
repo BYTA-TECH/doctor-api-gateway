@@ -213,8 +213,8 @@ doctor:
 consultation:
    url: 35.209.250.234:8090
 elasticsearch:
-   host: 81b3d974a18b4c16bc3cdbb3595ffcf9.us-central1.gcp.cloud.es.io
+   host: 40097436f7e24cb0b163ff5f89b10638.us-central1.gcp.cloud.es.io
    port: 9243
    username: elastic
-   password: kUaIPSZLw5WJERdn219tvVW3
+   password: 5vQHXvjUTb9HvRxaGHgATXr4
     
