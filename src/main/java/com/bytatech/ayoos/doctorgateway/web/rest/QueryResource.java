@@ -84,7 +84,13 @@ public class QueryResource {
 		return reservedSlotResourceApi.getAllUnReservedSlotsUsingGET(page, size, sort);
 	}
 */
-	
+ 
+	//findSlots to createSlot
+	@GetMapping("/Dr-slots/{workPlaceId}/{date}/{doctorIdpCode}")
+	public Set<Slot> createSlot(@PathVariable Long workPlaceId,@PathVariable LocalDate date, @PathVariable String doctorIdpCode,Pageable pageable) {
+		return doctorQueryService.createSlot( workPlaceId,date,doctorIdpCode, pageable);
+	}
+ 
 	@GetMapping("/doctorSettings/{doctorIdpCode}")
 	public ResponseEntity<DoctorSettingsDTO> findDoctorSettings(@PathVariable String doctorIdpCode) {
 		return  ResponseEntity.ok(doctorQueryService.findDoctorSettings(doctorIdpCode));
