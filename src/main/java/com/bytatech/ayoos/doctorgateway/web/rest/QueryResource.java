@@ -18,8 +18,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import com.bytatech.ayoos.doctorgateway.client.doctor.model.*;
-import com.bytatech.ayoos.doctorgateway.service.*;
+
+import com.bytatech.ayoos.doctorgateway.client.doctor.model.DoctorDTO;
+import com.bytatech.ayoos.doctorgateway.client.doctor.model.DoctorSettingsDTO;
+import com.bytatech.ayoos.doctorgateway.client.doctor.model.PaymentSettingsDTO;
+import com.bytatech.ayoos.doctorgateway.client.doctor.model.Qualification;
+import com.bytatech.ayoos.doctorgateway.client.doctor.model.SessionInfo;
+import com.bytatech.ayoos.doctorgateway.client.doctor.model.UserRatingReview;
+import com.bytatech.ayoos.doctorgateway.client.doctor.model.WorkPlace;
+import com.bytatech.ayoos.doctorgateway.service.DoctorQueryService;
+
 
 @RestController
 @RequestMapping("/api/query")
@@ -36,7 +44,6 @@ public class QueryResource {
 	public ResponseEntity<DoctorDTO> findDoctorByDoctorIdpCode(@PathVariable String doctorIdpCode) {
 		return ResponseEntity.ok(doctorQueryService.findDoctorByDoctorIdpCode(doctorIdpCode));
 
-	
 	}
 
 
@@ -68,10 +75,6 @@ public class QueryResource {
 				.body(doctorQueryService.findSessionInfoByDoctorsWorkPlace(doctorIdpCode, workPlaceId, pageable));
 	}
 
-	
-
-	
- 
 	@GetMapping("/doctorSettings/{doctorIdpCode}")
 	public ResponseEntity<DoctorSettingsDTO> findDoctorSettings(@PathVariable String doctorIdpCode) {
 		return  ResponseEntity.ok(doctorQueryService.findDoctorSettings(doctorIdpCode));
