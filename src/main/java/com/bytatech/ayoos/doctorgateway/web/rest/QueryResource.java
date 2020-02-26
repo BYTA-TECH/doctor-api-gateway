@@ -39,14 +39,6 @@ public class QueryResource {
 	
 	}
 
-/*
-	@GetMapping("/contactInfos/{contactInfoId}")
-	public ResponseEntity<ContactInfoDTO> findContactInfoById(@PathVariable String contactInfoId) {
-
-		return ResponseEntity.ok(doctorQueryService.findContactInfoById(contactInfoId));
-	
-	}*/
-
 
 	@GetMapping("/workPlaces/{doctorIdpCode}")
 	public Page<WorkPlace> findWorkPlacesByDoctorIdpCode(@PathVariable String doctorIdpCode, Pageable pageable) {
