@@ -53,8 +53,8 @@ public class DoctorCommandServiceImpl  implements DoctorCommandService {
 	  @Autowired
 	  WorkPlaceResourceApi workPlaceResourceApi;
 	  
-	  @Autowired
-	  SlotResourceApi slotResourceApi;
+//	  @Autowired
+//	  SlotResourceApi slotResourceApi;
 	
 	 
 	    public ResponseEntity<DoctorDTO> createDoctor(  DoctorDTO doctorDTO) throws URISyntaxException {
@@ -124,9 +124,9 @@ public class DoctorCommandServiceImpl  implements DoctorCommandService {
 	
 	 //please wire this method instead of createSessionInfo
 	
-		 public ResponseEntity<List<SessionInfoDTO>> createSessionInfoByDates(List<DoctorSessionInfoDTO> doctorSessionInfoDTO){
+		 public ResponseEntity<List<SessionInfoDTO>> createSessionInfoByDates(List<TimingDetailDTO> timingDetailDTO){
 			 
-			 return  sessionInfoAPi.setSessionByDatesUsingPOST(doctorSessionInfoDTO);
+			 return  sessionInfoAPi.setSessionByDatesUsingPOST(timingDetailDTO);
 			 
 			
 		 }

@@ -61,7 +61,6 @@ public class Doctor {
     private Set<UserRatingReview> userRatingReviews = new HashSet<>();
 
 
-    private Set<Slot> slots = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -303,30 +302,7 @@ public class Doctor {
         this.userRatingReviews = userRatingReviews;
     }
 
-    public Set<Slot> getSlots() {
-        return slots;
-    }
-
-    public Doctor slots(Set<Slot> slots) {
-        this.slots = slots;
-        return this;
-    }
-
-    public Doctor addSlot(Slot slot) {
-        this.slots.add(slot);
-        slot.setDoctor(this);
-        return this;
-    }
-
-    public Doctor removeSlot(Slot slot) {
-        this.slots.remove(slot);
-        slot.setDoctor(null);
-        return this;
-    }
-
-    public void setSlots(Set<Slot> slots) {
-        this.slots = slots;
-    }
+   
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override

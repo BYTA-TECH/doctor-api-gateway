@@ -240,34 +240,7 @@ public class DoctorQueryServiceImpl implements DoctorQueryService {
 		PaymentSettings paymentSettings=serviceUtility.getObjectResult(searchResponse, new PaymentSettings());
 	return	paymentSettingsMapper.toDto(paymentSettings);
 	}
-public	Set<Slot> createSlot(Long workPlaceId,LocalDate date, String doctorIdpCode,Pageable pageable){
-	List<SessionInfo> sessioninfoList=findSessionInfoByDoctorsWorkPlaceAndDate(date,doctorIdpCode,workPlaceId);
-	List<Slot> slotList = findSlotbyStatus(date,doctorIdpCode,"booked");
-	
-	Set<Slot> slotSet = new HashSet<>(slotList); 
-	for(SessionInfo s:sessioninfoList) {
-		
-		OffsetDateTime slotEndTime = null;
-		int i = 1;
-		do {
-	
-			
-			Slot slot = new Slot();
-			slot.setDate(date);
-			slot.setFromTime(s.getFromTime());
-			slot.setToTime(s.getFromTime().plusSeconds(s.getInterval()+i));
-			slotEndTime =slot.getToTime();
-			slotSet.add(slot);
-			i++;
-			
-		}
-		while(slotEndTime==s.getToTime());
-	}
-	
-	
-	return slotSet;
-		
-	}
+
 
 private List<SessionInfo> findSessionInfoByDoctorsWorkPlaceAndDate(LocalDate date,String doctorIdpCode, Long workPlaceId) {
     
@@ -298,39 +271,7 @@ private List<SessionInfo> findSessionInfoByDoctorsWorkPlaceAndDate(LocalDate dat
 	 
 }	
 	
-private List<Slot>  findSlotbyStatus(LocalDate date,String doctorIdpCode,String status){
-	
-	QueryBuilder dslQuery = QueryBuilders.boolQuery()
-			.must(QueryBuilders.termQuery("slot.doctor.doctorIdpCode.keyword", doctorIdpCode))
-			.must(QueryBuilders.termQuery("status",status))
-			.must(QueryBuilders.termQuery("date",date.toString()));
-	
-	
-	SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-	searchSourceBuilder.query(dslQuery);
-	  SearchRequest searchRequest = new SearchRequest("status");
-	  searchRequest.source(searchSourceBuilder);
-	  SearchResponse searchResponse = null;
-	  
-	  try { searchResponse = restHighLevelClient.search(searchRequest,
-	  RequestOptions.DEFAULT); }
-	  catch (IOException e) { // TODO Auto-generated
-	  e.printStackTrace(); }
-	  SearchHit[] searchHit =searchResponse.getHits().getHits();
-	  
-	  
-	  List<Status> sessioninfoList = new ArrayList<>();
-	  
-	  for (SearchHit hit : searchHit) {
 
-		  sessioninfoList.add(objectMapper.convertValue(hit.getSourceAsMap(), Status.class));
-	  }
-	  
-	 
-	
-	return null;
-	
-}
 
 public PaymentSettingsDTO findPaymentSettingsByDoctorIdpCode(String doctorIdpCode)
 {
