@@ -9,6 +9,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDate;
 import java.util.Date;
 import org.springframework.validation.annotation.Validated;
+
+import javax.persistence.Lob;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
@@ -60,6 +62,13 @@ public class DoctorDTO   {
 
   @JsonProperty("totalRating")
   private Double totalRating = null;
+  
+  @JsonProperty("image")
+  @Lob
+  private byte[] image;
+  
+  @JsonProperty("imageContentType")
+  private String imageContentType=null;
 
   public DoctorDTO contactInfoId(Long contactInfoId) {
     this.contactInfoId = contactInfoId;
