@@ -3,6 +3,9 @@ package com.bytatech.ayoos.doctorgateway.client.doctor.model;
 
 import java.io.Serializable;
 import java.time.OffsetDateTime;
+
+
+
 import java.time.LocalDate;
 
 /**
@@ -15,6 +18,9 @@ public class SessionInfo  {
 
 
     private Long id;
+    
+    
+    private String doctorIdpCode;
 
    
     private String sessionName;
@@ -41,6 +47,15 @@ public class SessionInfo  {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    
+    public String getDoctorIdpCode() {
+        return doctorIdpCode;
+    }
+
+    public SessionInfo doctorIdpCode(String doctorIdpCode) {
+        this.doctorIdpCode = doctorIdpCode;
+        return this;
     }
 
     public String getSessionName() {
