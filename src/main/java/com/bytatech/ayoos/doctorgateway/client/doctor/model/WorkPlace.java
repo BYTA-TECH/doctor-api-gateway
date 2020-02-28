@@ -4,6 +4,7 @@ package com.bytatech.ayoos.doctorgateway.client.doctor.model;
 import java.util.HashSet;
 import java.util.Set;
 
+
 /**
  * A WorkPlace.
  */
@@ -13,6 +14,9 @@ public class WorkPlace  {
 
   
     private Long id;
+    
+    
+    private String doctorIdpCode;
 
  
     private String name;
@@ -35,6 +39,15 @@ public class WorkPlace  {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    
+    public String getDoctorIdpCode() {
+        return doctorIdpCode;
+    }
+
+    public WorkPlace doctorIdpCode(String doctorIdpCode) {
+        this.doctorIdpCode = doctorIdpCode;
+        return this;
     }
 
     public String getName() {
@@ -131,13 +144,12 @@ public class WorkPlace  {
         return 31;
     }
 
-    @Override
-    public String toString() {
-        return "WorkPlace{" +
-            "id=" + getId() +
-            ", name='" + getName() + "'" +
-            ", locationName='" + getLocationName() + "'" +
-            ", location='" + getLocation() + "'" +
-            "}";
-    }
+	@Override
+	public String toString() {
+		return "WorkPlace [id=" + id + ", doctorIdpCode=" + doctorIdpCode + ", name=" + name + ", locationName="
+				+ locationName + ", location=" + location + ", sessionInfos=" + sessionInfos + ", doctor=" + doctor
+				+ "]";
+	}
+
+    
 }

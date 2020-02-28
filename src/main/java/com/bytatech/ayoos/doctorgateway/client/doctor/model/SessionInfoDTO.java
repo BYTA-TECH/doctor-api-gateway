@@ -71,10 +71,11 @@ public class SessionInfoDTO   {
     this.date = date;
   }
 
-  public SessionInfoDTO doctorIdpCode(String doctorIdpCode) {
-    this.doctorIdpCode = doctorIdpCode;
-    return this;
-  }
+  public SessionInfoDTO fromTime(OffsetDateTime fromTime) {
+	    this.fromTime = fromTime;
+	    return this;
+	  }
+  
 
   /**
    * Get doctorIdpCode
@@ -91,10 +92,10 @@ public class SessionInfoDTO   {
     this.doctorIdpCode = doctorIdpCode;
   }
 
-  public SessionInfoDTO fromTime(OffsetDateTime fromTime) {
-    this.fromTime = fromTime;
-    return this;
-  }
+  public SessionInfoDTO doctorIdpCode(String doctorIdpCode) {
+	    this.doctorIdpCode = doctorIdpCode;
+	    return this;
+	  }
 
   /**
    * Get fromTime

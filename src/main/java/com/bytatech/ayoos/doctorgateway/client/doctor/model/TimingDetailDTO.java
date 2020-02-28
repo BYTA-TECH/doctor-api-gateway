@@ -19,14 +19,18 @@ import javax.validation.constraints.*;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-26T15:32:09.438+05:30[Asia/Calcutta]")
 
 public class TimingDetailDTO   {
+
+  @JsonProperty("id")
+  private Long id = null;
+  
+  @JsonProperty("doctorIdpCode")
+  private String doctorIdpCode=null;
+  
   @JsonProperty("fromDate")
   private LocalDate fromDate = null;
 
   @JsonProperty("fromTime")
   private OffsetDateTime fromTime = null;
-
-  @JsonProperty("id")
-  private Long id = null;
 
   @JsonProperty("interval")
   private Long interval = null;
@@ -40,6 +44,9 @@ public class TimingDetailDTO   {
   @JsonProperty("weekday")
   private Long weekday = null;
 
+  @JsonProperty("workPlaceId")
+  private Long workPlaceId = null;
+  
   public TimingDetailDTO fromDate(LocalDate fromDate) {
     this.fromDate = fromDate;
     return this;
@@ -183,6 +190,45 @@ public class TimingDetailDTO   {
   public void setWeekday(Long weekday) {
     this.weekday = weekday;
   }
+  /**
+   * Get doctorIdpCode
+   * @return doctorIdpCode
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public String getDoctorIdpCode() {
+    return doctorIdpCode;
+  }
+
+  public void setDoctorIdpCode(String doctorIdpCode) {
+    this.doctorIdpCode = doctorIdpCode;
+  }
+
+  public TimingDetailDTO doctorIdpCode(String doctorIdpCode) {
+	    this.doctorIdpCode = doctorIdpCode;
+	    return this;
+	  }
+
+  public TimingDetailDTO workPlaceId(Long workPlaceId) {
+	    this.workPlaceId = workPlaceId;
+	    return this;
+	  }
+
+	  /**
+	   * Get workPlaceId
+	   * @return workPlaceId
+	  **/
+	  @ApiModelProperty(value = "")
+
+
+	  public Long getWorkPlaceId() {
+	    return workPlaceId;
+	  }
+
+	  public void setWorkPlaceId(Long workPlaceId) {
+	    this.workPlaceId = workPlaceId;
+	  }
 
 
   @Override
@@ -194,18 +240,20 @@ public class TimingDetailDTO   {
       return false;
     }
     TimingDetailDTO timingDetailDTO = (TimingDetailDTO) o;
-    return Objects.equals(this.fromDate, timingDetailDTO.fromDate) &&
+    return  Objects.equals(this.doctorIdpCode, timingDetailDTO.doctorIdpCode) &&
+    	Objects.equals(this.fromDate, timingDetailDTO.fromDate) &&
         Objects.equals(this.fromTime, timingDetailDTO.fromTime) &&
         Objects.equals(this.id, timingDetailDTO.id) &&
         Objects.equals(this.interval, timingDetailDTO.interval) &&
         Objects.equals(this.toDate, timingDetailDTO.toDate) &&
         Objects.equals(this.toTime, timingDetailDTO.toTime) &&
-        Objects.equals(this.weekday, timingDetailDTO.weekday);
+        Objects.equals(this.weekday, timingDetailDTO.weekday) &&
+        Objects.equals(this.workPlaceId, timingDetailDTO.workPlaceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fromDate, fromTime, id, interval, toDate, toTime, weekday);
+    return Objects.hash(fromDate, fromTime, id, interval, toDate, toTime, weekday, workPlaceId);
   }
 
   @Override
@@ -213,6 +261,7 @@ public class TimingDetailDTO   {
     StringBuilder sb = new StringBuilder();
     sb.append("class TimingDetailDTO {\n");
     
+    sb.append("    doctorIdpCode: ").append(toIndentedString(doctorIdpCode)).append("\n");
     sb.append("    fromDate: ").append(toIndentedString(fromDate)).append("\n");
     sb.append("    fromTime: ").append(toIndentedString(fromTime)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
@@ -220,6 +269,7 @@ public class TimingDetailDTO   {
     sb.append("    toDate: ").append(toIndentedString(toDate)).append("\n");
     sb.append("    toTime: ").append(toIndentedString(toTime)).append("\n");
     sb.append("    weekday: ").append(toIndentedString(weekday)).append("\n");
+    sb.append("    workPlaceId: ").append(toIndentedString(workPlaceId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
