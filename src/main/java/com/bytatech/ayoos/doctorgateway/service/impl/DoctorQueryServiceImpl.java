@@ -142,7 +142,7 @@ public class DoctorQueryServiceImpl implements DoctorQueryService {
 		 * builder.fetchSource(include, exclude);
 		 */
 
-		QueryBuilder dslQuery = QueryBuilders.boolQuery().filter(termQuery("doctor.doctorIdpCode", doctorIdpCode));
+		QueryBuilder dslQuery = QueryBuilders.boolQuery().filter(termQuery("doctorIdpCode.keyword", doctorIdpCode));
 		SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
 		searchSourceBuilder.query(dslQuery);
 		SearchResponse searchResponse = serviceUtility.searchResponseForPage("workplace", searchSourceBuilder,
