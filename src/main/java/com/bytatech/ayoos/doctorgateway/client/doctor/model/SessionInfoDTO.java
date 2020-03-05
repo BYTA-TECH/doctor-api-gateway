@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.util.Date;
 import org.springframework.validation.annotation.Validated;
@@ -27,7 +28,7 @@ public class SessionInfoDTO   {
   private String doctorIdpCode = null;
 
   @JsonProperty("fromTime")
-  private OffsetDateTime fromTime = null;
+  private LocalTime fromTime = null;
 
   @JsonProperty("id")
   private Long id = null;
@@ -42,7 +43,7 @@ public class SessionInfoDTO   {
   private Long statusId = null;
 
   @JsonProperty("toTime")
-  private OffsetDateTime toTime = null;
+  private LocalTime toTime = null;
 
   @JsonProperty("weekDay")
   private Long weekDay = null;
@@ -71,7 +72,7 @@ public class SessionInfoDTO   {
     this.date = date;
   }
 
-  public SessionInfoDTO fromTime(OffsetDateTime fromTime) {
+  public SessionInfoDTO fromTime(LocalTime fromTime) {
 	    this.fromTime = fromTime;
 	    return this;
 	  }
@@ -105,11 +106,11 @@ public class SessionInfoDTO   {
 
   @Valid
 
-  public OffsetDateTime getFromTime() {
+  public LocalTime getFromTime() {
     return fromTime;
   }
 
-  public void setFromTime(OffsetDateTime fromTime) {
+  public void setFromTime(LocalTime fromTime) {
     this.fromTime = fromTime;
   }
 
@@ -193,7 +194,7 @@ public class SessionInfoDTO   {
     this.statusId = statusId;
   }
 
-  public SessionInfoDTO toTime(OffsetDateTime toTime) {
+  public SessionInfoDTO toTime(LocalTime toTime) {
     this.toTime = toTime;
     return this;
   }
@@ -206,11 +207,11 @@ public class SessionInfoDTO   {
 
   @Valid
 
-  public OffsetDateTime getToTime() {
+  public LocalTime getToTime() {
     return toTime;
   }
 
-  public void setToTime(OffsetDateTime toTime) {
+  public void setToTime(LocalTime toTime) {
     this.toTime = toTime;
   }
 

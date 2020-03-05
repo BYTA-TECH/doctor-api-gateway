@@ -30,7 +30,7 @@ public class TimingDetailDTO   {
   private LocalDate fromDate = null;
 
   @JsonProperty("fromTime")
-  private OffsetDateTime fromTime = null;
+  private LocalTime fromTime = null;
 
   @JsonProperty("interval")
   private Long interval = null;
@@ -39,7 +39,7 @@ public class TimingDetailDTO   {
   private LocalDate toDate = null;
 
   @JsonProperty("toTime")
-  private OffsetDateTime toTime = null;
+  private LocalTime toTime = null;
 
   @JsonProperty("weekday")
   private Long weekday = null;
@@ -68,7 +68,7 @@ public class TimingDetailDTO   {
     this.fromDate = fromDate;
   }
 
-  public TimingDetailDTO fromTime(OffsetDateTime fromTime) {
+  public TimingDetailDTO fromTime(LocalTime fromTime) {
     this.fromTime = fromTime;
     return this;
   }
@@ -81,11 +81,11 @@ public class TimingDetailDTO   {
 
   @Valid
 
-  public OffsetDateTime getFromTime() {
+  public LocalTime getFromTime() {
     return fromTime;
   }
 
-  public void setFromTime(OffsetDateTime fromTime) {
+  public void setFromTime(LocalTime fromTime) {
     this.fromTime = fromTime;
   }
 
@@ -150,7 +150,7 @@ public class TimingDetailDTO   {
     this.toDate = toDate;
   }
 
-  public TimingDetailDTO toTime(OffsetDateTime toTime) {
+  public TimingDetailDTO toTime(LocalTime toTime) {
     this.toTime = toTime;
     return this;
   }
@@ -163,11 +163,11 @@ public class TimingDetailDTO   {
 
   @Valid
 
-  public OffsetDateTime getToTime() {
+  public LocalTime getToTime() {
     return toTime;
   }
 
-  public void setToTime(OffsetDateTime toTime) {
+  public void setToTime(LocalTime toTime) {
     this.toTime = toTime;
   }
 
