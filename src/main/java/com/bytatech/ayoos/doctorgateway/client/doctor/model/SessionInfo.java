@@ -7,6 +7,7 @@ import java.time.OffsetDateTime;
 
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 /**
  * A SessionInfo.
@@ -29,10 +30,10 @@ public class SessionInfo  {
     private LocalDate date;
 
 
-    private OffsetDateTime fromTime;
+    private LocalTime fromTime;
 
   
-    private OffsetDateTime toTime;
+    private LocalTime toTime;
 
  
     private Long interval;
@@ -84,29 +85,29 @@ public class SessionInfo  {
         this.date = date;
     }
 
-    public OffsetDateTime getFromTime() {
+    public LocalTime getFromTime() {
         return fromTime;
     }
 
-    public SessionInfo fromTime(OffsetDateTime fromTime) {
+    public SessionInfo fromTime(LocalTime fromTime) {
         this.fromTime = fromTime;
         return this;
     }
 
-    public void setFromTime(OffsetDateTime fromTime) {
+    public void setFromTime(LocalTime fromTime) {
         this.fromTime = fromTime;
     }
 
-    public OffsetDateTime getToTime() {
+    public LocalTime getToTime() {
         return toTime;
     }
 
-    public SessionInfo toTime(OffsetDateTime toTime) {
+    public SessionInfo toTime(LocalTime toTime) {
         this.toTime = toTime;
         return this;
     }
 
-    public void setToTime(OffsetDateTime toTime) {
+    public void setToTime(LocalTime toTime) {
         this.toTime = toTime;
     }
 
