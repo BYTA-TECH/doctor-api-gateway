@@ -3,13 +3,13 @@ package com.bytatech.ayoos.doctorgateway.client.doctor.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.time.OffsetDateTime;
-import java.util.Date;
+import java.time.LocalTime;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -18,7 +18,7 @@ import javax.validation.constraints.*;
  * SessionInfoDTO
  */
 @Validated
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-26T15:32:09.438+05:30[Asia/Calcutta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-03-06T14:11:35.525+05:30[Asia/Calcutta]")
 
 public class SessionInfoDTO   {
   @JsonProperty("date")
@@ -38,6 +38,44 @@ public class SessionInfoDTO   {
 
   @JsonProperty("sessionName")
   private String sessionName = null;
+
+  /**
+   * Gets or Sets sessionStatus
+   */
+  public enum SessionStatusEnum {
+    AVAILABLE("AVAILABLE"),
+    
+    PENDING("PENDING"),
+    
+    RESERVED("RESERVED"),
+    
+    CANCELLED("CANCELLED");
+
+    private String value;
+
+    SessionStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static SessionStatusEnum fromValue(String text) {
+      for (SessionStatusEnum b : SessionStatusEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+  }
+
+  @JsonProperty("sessionStatus")
+  private SessionStatusEnum sessionStatus = null;
 
   @JsonProperty("statusId")
   private Long statusId = null;
@@ -72,11 +110,10 @@ public class SessionInfoDTO   {
     this.date = date;
   }
 
-  public SessionInfoDTO fromTime(LocalTime fromTime) {
-	    this.fromTime = fromTime;
-	    return this;
-	  }
-  
+  public SessionInfoDTO doctorIdpCode(String doctorIdpCode) {
+    this.doctorIdpCode = doctorIdpCode;
+    return this;
+  }
 
   /**
    * Get doctorIdpCode
@@ -93,10 +130,10 @@ public class SessionInfoDTO   {
     this.doctorIdpCode = doctorIdpCode;
   }
 
-  public SessionInfoDTO doctorIdpCode(String doctorIdpCode) {
-	    this.doctorIdpCode = doctorIdpCode;
-	    return this;
-	  }
+  public SessionInfoDTO fromTime(LocalTime fromTime) {
+    this.fromTime = fromTime;
+    return this;
+  }
 
   /**
    * Get fromTime
@@ -172,6 +209,26 @@ public class SessionInfoDTO   {
 
   public void setSessionName(String sessionName) {
     this.sessionName = sessionName;
+  }
+
+  public SessionInfoDTO sessionStatus(SessionStatusEnum sessionStatus) {
+    this.sessionStatus = sessionStatus;
+    return this;
+  }
+
+  /**
+   * Get sessionStatus
+   * @return sessionStatus
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public SessionStatusEnum getSessionStatus() {
+    return sessionStatus;
+  }
+
+  public void setSessionStatus(SessionStatusEnum sessionStatus) {
+    this.sessionStatus = sessionStatus;
   }
 
   public SessionInfoDTO statusId(Long statusId) {
@@ -271,6 +328,7 @@ public class SessionInfoDTO   {
         Objects.equals(this.id, sessionInfoDTO.id) &&
         Objects.equals(this.interval, sessionInfoDTO.interval) &&
         Objects.equals(this.sessionName, sessionInfoDTO.sessionName) &&
+        Objects.equals(this.sessionStatus, sessionInfoDTO.sessionStatus) &&
         Objects.equals(this.statusId, sessionInfoDTO.statusId) &&
         Objects.equals(this.toTime, sessionInfoDTO.toTime) &&
         Objects.equals(this.weekDay, sessionInfoDTO.weekDay) &&
@@ -279,7 +337,7 @@ public class SessionInfoDTO   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(date, doctorIdpCode, fromTime, id, interval, sessionName, statusId, toTime, weekDay, workPlaceId);
+    return Objects.hash(date, doctorIdpCode, fromTime, id, interval, sessionName, sessionStatus, statusId, toTime, weekDay, workPlaceId);
   }
 
   @Override
@@ -293,6 +351,7 @@ public class SessionInfoDTO   {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    sessionName: ").append(toIndentedString(sessionName)).append("\n");
+    sb.append("    sessionStatus: ").append(toIndentedString(sessionStatus)).append("\n");
     sb.append("    statusId: ").append(toIndentedString(statusId)).append("\n");
     sb.append("    toTime: ").append(toIndentedString(toTime)).append("\n");
     sb.append("    weekDay: ").append(toIndentedString(weekDay)).append("\n");

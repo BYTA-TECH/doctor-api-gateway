@@ -9,8 +9,6 @@ import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDate;
 import java.util.Date;
 import org.springframework.validation.annotation.Validated;
-
-import javax.persistence.Lob;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
@@ -18,7 +16,7 @@ import javax.validation.constraints.*;
  * DoctorDTO
  */
 @Validated
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-26T15:32:09.438+05:30[Asia/Calcutta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-03-06T14:11:35.525+05:30[Asia/Calcutta]")
 
 public class DoctorDTO   {
   @JsonProperty("contactInfoId")
@@ -42,6 +40,12 @@ public class DoctorDTO   {
   @JsonProperty("id")
   private Long id = null;
 
+  @JsonProperty("image")
+  private byte[] image = null;
+
+  @JsonProperty("imageContentType")
+  private String imageContentType = null;
+
   @JsonProperty("imageLink")
   private String imageLink = null;
 
@@ -62,13 +66,6 @@ public class DoctorDTO   {
 
   @JsonProperty("totalRating")
   private Double totalRating = null;
-  
-  @JsonProperty("image")
-  @Lob
-  private byte[] image;
-  
-  @JsonProperty("imageContentType")
-  private String imageContentType=null;
 
   public DoctorDTO contactInfoId(Long contactInfoId) {
     this.contactInfoId = contactInfoId;
@@ -208,6 +205,46 @@ public class DoctorDTO   {
 
   public void setId(Long id) {
     this.id = id;
+  }
+
+  public DoctorDTO image(byte[] image) {
+    this.image = image;
+    return this;
+  }
+
+  /**
+   * Get image
+   * @return image
+  **/
+  @ApiModelProperty(value = "")
+
+@Pattern(regexp="^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$") 
+  public byte[] getImage() {
+    return image;
+  }
+
+  public void setImage(byte[] image) {
+    this.image = image;
+  }
+
+  public DoctorDTO imageContentType(String imageContentType) {
+    this.imageContentType = imageContentType;
+    return this;
+  }
+
+  /**
+   * Get imageContentType
+   * @return imageContentType
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public String getImageContentType() {
+    return imageContentType;
+  }
+
+  public void setImageContentType(String imageContentType) {
+    this.imageContentType = imageContentType;
   }
 
   public DoctorDTO imageLink(String imageLink) {
@@ -368,6 +405,8 @@ public class DoctorDTO   {
         Objects.equals(this.email, doctorDTO.email) &&
         Objects.equals(this.firstName, doctorDTO.firstName) &&
         Objects.equals(this.id, doctorDTO.id) &&
+        Objects.equals(this.image, doctorDTO.image) &&
+        Objects.equals(this.imageContentType, doctorDTO.imageContentType) &&
         Objects.equals(this.imageLink, doctorDTO.imageLink) &&
         Objects.equals(this.paymentSettingsId, doctorDTO.paymentSettingsId) &&
         Objects.equals(this.phoneNumber, doctorDTO.phoneNumber) &&
@@ -379,7 +418,7 @@ public class DoctorDTO   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(contactInfoId, dmsId, doctorIdpCode, doctorSettingsId, email, firstName, id, imageLink, paymentSettingsId, phoneNumber, practiceSince, registerNumber, specialization, totalRating);
+    return Objects.hash(contactInfoId, dmsId, doctorIdpCode, doctorSettingsId, email, firstName, id, image, imageContentType, imageLink, paymentSettingsId, phoneNumber, practiceSince, registerNumber, specialization, totalRating);
   }
 
   @Override
@@ -394,6 +433,8 @@ public class DoctorDTO   {
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    image: ").append(toIndentedString(image)).append("\n");
+    sb.append("    imageContentType: ").append(toIndentedString(imageContentType)).append("\n");
     sb.append("    imageLink: ").append(toIndentedString(imageLink)).append("\n");
     sb.append("    paymentSettingsId: ").append(toIndentedString(paymentSettingsId)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");

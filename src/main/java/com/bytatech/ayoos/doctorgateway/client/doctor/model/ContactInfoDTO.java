@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
  * ContactInfoDTO
  */
 @Validated
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-02-26T15:32:09.438+05:30[Asia/Calcutta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-03-06T14:11:35.525+05:30[Asia/Calcutta]")
 
 public class ContactInfoDTO   {
   @JsonProperty("facebookURL")
