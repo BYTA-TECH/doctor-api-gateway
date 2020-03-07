@@ -7,9 +7,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
-import java.time.LocalTime;
+import java.util.Date;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -18,7 +19,7 @@ import javax.validation.constraints.*;
  * SessionInfoDTO
  */
 @Validated
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-03-06T14:11:35.525+05:30[Asia/Calcutta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-03-07T12:55:19.430+05:30[Asia/Colombo]")
 
 public class SessionInfoDTO   {
   @JsonProperty("date")
@@ -28,7 +29,7 @@ public class SessionInfoDTO   {
   private String doctorIdpCode = null;
 
   @JsonProperty("fromTime")
-  private LocalTime fromTime = null;
+  private Instant fromTime = null;
 
   @JsonProperty("id")
   private Long id = null;
@@ -81,7 +82,7 @@ public class SessionInfoDTO   {
   private Long statusId = null;
 
   @JsonProperty("toTime")
-  private LocalTime toTime = null;
+  private Instant toTime = null;
 
   @JsonProperty("weekDay")
   private Long weekDay = null;
@@ -130,7 +131,7 @@ public class SessionInfoDTO   {
     this.doctorIdpCode = doctorIdpCode;
   }
 
-  public SessionInfoDTO fromTime(LocalTime fromTime) {
+  public SessionInfoDTO fromTime(Instant fromTime) {
     this.fromTime = fromTime;
     return this;
   }
@@ -143,11 +144,11 @@ public class SessionInfoDTO   {
 
   @Valid
 
-  public LocalTime getFromTime() {
+  public Instant getFromTime() {
     return fromTime;
   }
 
-  public void setFromTime(LocalTime fromTime) {
+  public void setFromTime(Instant fromTime) {
     this.fromTime = fromTime;
   }
 
@@ -251,7 +252,7 @@ public class SessionInfoDTO   {
     this.statusId = statusId;
   }
 
-  public SessionInfoDTO toTime(LocalTime toTime) {
+  public SessionInfoDTO toTime(Instant toTime) {
     this.toTime = toTime;
     return this;
   }
@@ -264,11 +265,11 @@ public class SessionInfoDTO   {
 
   @Valid
 
-  public LocalTime getToTime() {
+  public Instant getToTime() {
     return toTime;
   }
 
-  public void setToTime(LocalTime toTime) {
+  public void setToTime(Instant toTime) {
     this.toTime = toTime;
   }
 

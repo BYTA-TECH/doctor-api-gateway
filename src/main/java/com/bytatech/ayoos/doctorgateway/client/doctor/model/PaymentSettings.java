@@ -1,36 +1,28 @@
-package com.bytatech.ayoos.doctorgateway.client.doctor.model;
+package com.bytatech.ayoos.doctorgateway.client.doctor.model; 
+import java.io.Serializable;
 
 /**
  * A PaymentSettings.
- */
+ */ 
+public class PaymentSettings implements Serializable {
 
-public class PaymentSettings  {
-
-
-
+    private static final long serialVersionUID = 1L;
+ 
     private Long id;
-
+ 
     private Boolean isPaymentEnabled;
-
-
+ 
     private Double amount;
-
-
+ 
     private String paymentMethod;
-
-
+ 
     private String currency;
-
-   
+ 
     private String intent;
-
-
-    private String noteToPayer;
-
-
+ 
+    private String noteToPayer; 
     private String paymentGatewayProvider;
-
-   
+ 
     private String paymentGatewayCredentials;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

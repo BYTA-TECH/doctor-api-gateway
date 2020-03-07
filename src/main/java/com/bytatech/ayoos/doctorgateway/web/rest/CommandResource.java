@@ -179,10 +179,10 @@ public class CommandResource {
 		 
 	}
 	
-	//warning :dont delete the method, this one is used for only to get DoctorSessionInfoDTO dto in front end for further info contact Sooraj
+	//warning :dont delete the method, this one is used for only to get TimingDetailDTO dto in front end for further info contact Sooraj
 	@PostMapping("/Details")
-	public DoctorSessionInfoDTO createDetails(@RequestBody DoctorSessionInfoDTO doctorSessionInfoDTO) {
-		return doctorSessionInfoDTO;
+	public TimingDetailDTO createDetails(@RequestBody TimingDetailDTO timingDetailDTO) {
+		return timingDetailDTO;
 	}
 	
 	

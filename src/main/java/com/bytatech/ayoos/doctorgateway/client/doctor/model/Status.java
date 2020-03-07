@@ -1,19 +1,22 @@
 package com.bytatech.ayoos.doctorgateway.client.doctor.model;
 
-/**
- * A Status.
- */
+import org.hibernate.annotations.Cache; 
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-public class Status {
+import javax.persistence.*;
+ 
+import java.io.Serializable;
+
+/**
+ * @deprecated This entity is replaced by\nSessionStatus enum
+ */ 
+public class Status implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
-   
+ 
     private Long id;
-
-
+ 
     private String status;
-
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -36,8 +39,6 @@ public class Status {
     public void setStatus(String status) {
         this.status = status;
     }
-
-   
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override

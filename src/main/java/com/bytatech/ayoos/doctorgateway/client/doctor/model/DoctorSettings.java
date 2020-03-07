@@ -1,22 +1,25 @@
-package com.bytatech.ayoos.doctorgateway.client.doctor.model;
+package com.bytatech.ayoos.doctorgateway.client.doctor.model; 
 
+import javax.persistence.*;
+ 
+import java.io.Serializable;
 
 /**
  * A DoctorSettings.
- */
+ */ 
+public class DoctorSettings implements Serializable {
 
-public class DoctorSettings  {
-
-  
-
-   
+    private static final long serialVersionUID = 1L;
+ 
     private Long id;
 
+    @Column(name = "approval_type")
     private String approvalType;
 
+    @Column(name = "is_mail_notifications_enabled")
     private Boolean isMailNotificationsEnabled;
 
-
+    @Column(name = "is_sms_notifications_enabled")
     private Boolean isSMSNotificationsEnabled;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

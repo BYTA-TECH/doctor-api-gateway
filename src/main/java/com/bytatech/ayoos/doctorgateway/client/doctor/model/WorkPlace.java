@@ -1,35 +1,41 @@
 package com.bytatech.ayoos.doctorgateway.client.doctor.model;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties; 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-
+import javax.persistence.*;
+ 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-
 /**
  * A WorkPlace.
- */
+ */ 
+public class WorkPlace implements Serializable {
 
-public class WorkPlace  {
-
-
-  
+    private static final long serialVersionUID = 1L;
+ 
     private Long id;
-    
-    
+
+    @Column(name = "doctor_idp_code")
     private String doctorIdpCode;
 
- 
+    @Column(name = "name")
     private String name;
 
-
+    @Column(name = "location_name")
     private String locationName;
 
-   
+    @Column(name = "location")
     private String location;
 
-  
+    @OneToMany(mappedBy = "workPlace")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<SessionInfo> sessionInfos = new HashSet<>();
 
+    @ManyToOne
+    @JsonIgnoreProperties("workPlaces")
     private Doctor doctor;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
@@ -40,7 +46,7 @@ public class WorkPlace  {
     public void setId(Long id) {
         this.id = id;
     }
-    
+
     public String getDoctorIdpCode() {
         return doctorIdpCode;
     }
@@ -48,6 +54,10 @@ public class WorkPlace  {
     public WorkPlace doctorIdpCode(String doctorIdpCode) {
         this.doctorIdpCode = doctorIdpCode;
         return this;
+    }
+
+    public void setDoctorIdpCode(String doctorIdpCode) {
+        this.doctorIdpCode = doctorIdpCode;
     }
 
     public String getName() {
@@ -144,12 +154,14 @@ public class WorkPlace  {
         return 31;
     }
 
-	@Override
-	public String toString() {
-		return "WorkPlace [id=" + id + ", doctorIdpCode=" + doctorIdpCode + ", name=" + name + ", locationName="
-				+ locationName + ", location=" + location + ", sessionInfos=" + sessionInfos + ", doctor=" + doctor
-				+ "]";
-	}
-
-    
+    @Override
+    public String toString() {
+        return "WorkPlace{" +
+            "id=" + getId() +
+            ", doctorIdpCode='" + getDoctorIdpCode() + "'" +
+            ", name='" + getName() + "'" +
+            ", locationName='" + getLocationName() + "'" +
+            ", location='" + getLocation() + "'" +
+            "}";
+    }
 }

@@ -1,20 +1,22 @@
 package com.bytatech.ayoos.doctorgateway.client.doctor.model;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;  
+import java.io.Serializable;
+
+import javax.persistence.ManyToOne;
 
 /**
  * A Qualification.
- */
+ */ 
+public class Qualification implements Serializable {
 
-public class Qualification {
-
+    private static final long serialVersionUID = 1L;
  
-
-   
     private Long id;
-
  
     private String qualification;
 
-   
+    @ManyToOne
+    @JsonIgnoreProperties("qualifications")
     private Doctor doctor;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

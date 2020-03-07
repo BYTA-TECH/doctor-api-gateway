@@ -1,19 +1,15 @@
 package com.bytatech.ayoos.doctorgateway.client.doctor.model;
 
-import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
+import java.util.Objects; 
+import com.fasterxml.jackson.annotation.JsonProperty; 
 import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import org.springframework.validation.annotation.Validated; 
 
 /**
  * ContactInfoDTO
  */
 @Validated
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-03-06T14:11:35.525+05:30[Asia/Calcutta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-03-07T12:55:19.430+05:30[Asia/Colombo]")
 
 public class ContactInfoDTO   {
   @JsonProperty("facebookURL")

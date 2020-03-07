@@ -1,33 +1,38 @@
 package com.bytatech.ayoos.doctorgateway.client.doctor.model;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties; 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
+import javax.persistence.*;
+ 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * A UserRatingReview.
- */
+ */ 
+public class UserRatingReview implements Serializable {
 
-public class UserRatingReview  {
-
-
-
-  
+    private static final long serialVersionUID = 1L;
+ 
     private Long id;
-
+ 
     private String userName;
-
-   
+ 
     private Double rating;
-
-    
+ 
     private String review;
-
+ 
     private LocalDate date;
 
+    @OneToMany(mappedBy = "userRatingReview")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Reply> replies = new HashSet<>();
 
-
+    @ManyToOne
+    @JsonIgnoreProperties("userRatingReviews")
     private Doctor doctor;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

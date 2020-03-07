@@ -1,6 +1,6 @@
 package com.bytatech.ayoos.doctorgateway.service.mapper;
 
-import com.bytatech.ayoos.doctorgateway.client.doctor.model.*;
+import com.bytatech.ayoos.doctorgateway.client.doctor.model.*; 
 
 import org.mapstruct.*;
 
@@ -11,7 +11,7 @@ import org.mapstruct.*;
 public interface ContactInfoMapper extends EntityMapper<ContactInfoDTO, ContactInfo> {
 
 
-    @Mapping(target = "doctor", ignore = true)
+    
     ContactInfo toEntity(ContactInfoDTO contactInfoDTO);
 
     default ContactInfo fromId(Long id) {

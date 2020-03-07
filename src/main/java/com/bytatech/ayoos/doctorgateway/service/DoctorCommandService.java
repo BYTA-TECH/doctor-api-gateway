@@ -1,13 +1,12 @@
 package com.bytatech.ayoos.doctorgateway.service;
 
-import java.net.URISyntaxException;
+import java.net.URISyntaxException; 
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 
 import com.bytatech.ayoos.doctorgateway.client.doctor.model.ContactInfoDTO;
-import com.bytatech.ayoos.doctorgateway.client.doctor.model.DoctorDTO;
-import com.bytatech.ayoos.doctorgateway.client.doctor.model.DoctorSessionInfoDTO;
+import com.bytatech.ayoos.doctorgateway.client.doctor.model.DoctorDTO; 
 import com.bytatech.ayoos.doctorgateway.client.doctor.model.DoctorSettingsDTO;
 import com.bytatech.ayoos.doctorgateway.client.doctor.model.PaymentSettingsDTO;
 import com.bytatech.ayoos.doctorgateway.client.doctor.model.QualificationDTO;

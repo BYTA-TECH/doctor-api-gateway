@@ -1,22 +1,25 @@
 package com.bytatech.ayoos.doctorgateway.client.doctor.model;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties; 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
+import javax.persistence.*;
+ 
 import java.io.Serializable;
 
 /**
  * A Reply.
- */
+ */ 
+public class Reply implements Serializable {
 
-public class Reply  {
-
-
-
-  
+    private static final long serialVersionUID = 1L;
+ 
     private Long id;
-
-
+ 
     private String reply;
 
-    
+    @ManyToOne
+    @JsonIgnoreProperties("replies")
     private UserRatingReview userRatingReview;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

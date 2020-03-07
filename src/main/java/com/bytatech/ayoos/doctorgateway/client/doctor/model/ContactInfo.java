@@ -1,24 +1,26 @@
 package com.bytatech.ayoos.doctorgateway.client.doctor.model;
 
+ 
+ 
+import java.io.Serializable;
+
 /**
  * A ContactInfo.
- */
+ */ 
+public class ContactInfo implements Serializable {
 
-public class ContactInfo  {
-
-
-
-   
-    private Long id;
-
-
-    private String facebookURL;
-
-
-    private String twitterURL;
-
+    
  
-    private Doctor doctor;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private Long id;
+ 
+    private String facebookURL;
+ 
+    private String twitterURL;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -53,19 +55,6 @@ public class ContactInfo  {
 
     public void setTwitterURL(String twitterURL) {
         this.twitterURL = twitterURL;
-    }
-
-    public Doctor getDoctor() {
-        return doctor;
-    }
-
-    public ContactInfo doctor(Doctor doctor) {
-        this.doctor = doctor;
-        return this;
-    }
-
-    public void setDoctor(Doctor doctor) {
-        this.doctor = doctor;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
