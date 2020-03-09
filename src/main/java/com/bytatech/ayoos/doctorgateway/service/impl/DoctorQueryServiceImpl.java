@@ -209,7 +209,7 @@ public class DoctorQueryServiceImpl implements DoctorQueryService {
 			Pageable pageable) {
 
 		QueryBuilder dslQuery = QueryBuilders.boolQuery()
-				.must(QueryBuilders.termQuery("workPlace.doctor.doctorIdpCode.keyword", doctorIdpCode))
+				.must(QueryBuilders.termQuery("doctorIdpCode.keyword", doctorIdpCode))
 				.must(QueryBuilders.termQuery("workPlace.id", workPlaceId));
 		SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
 		searchSourceBuilder.query(dslQuery);
