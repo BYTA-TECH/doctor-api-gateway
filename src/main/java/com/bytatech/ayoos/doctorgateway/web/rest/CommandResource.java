@@ -119,6 +119,11 @@ public class CommandResource {
 	  public ResponseEntity<SessionInfoDTO> updateSessionInfo(@RequestBody SessionInfoDTO sessionInfoDTO){
 		  return  doctorCommandService.updateSessionInfo (sessionInfoDTO);
 	  }
+	  
+	  @DeleteMapping("/work-places/{id}")
+	  public void deleteSessionInfo(@PathVariable Long id){
+		  doctorCommandService.deleteSessionInfo(id);
+	  } 
 
 	@PostMapping("/paymentSettings")
 	public ResponseEntity<PaymentSettingsDTO> createPaymentSetting(@RequestBody PaymentSettingsDTO paymentSettingsDTO) {
@@ -189,14 +194,5 @@ public class CommandResource {
 	public TimingDetailDTO createDetails(@RequestBody TimingDetailDTO timingDetailDTO) {
 		return timingDetailDTO;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

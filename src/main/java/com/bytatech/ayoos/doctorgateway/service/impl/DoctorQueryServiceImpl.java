@@ -74,7 +74,7 @@ public class DoctorQueryServiceImpl implements DoctorQueryService {
 		SearchSourceBuilder builder = new SearchSourceBuilder();
 
 		String[] include = new String[] { "id","doctorIdpCode", "specialization", "registerNumber", "practiceSince",
-				"firstName", "contactInfo.*", "doctorSettings.*", "paymentSettings.*" };
+				"firstName", "contactInfo.*", "doctorSettings.*", "paymentSettings.*","email","phoneNumber" };
 		String[] exclude = new String[] { "workPlaces.*", "qualifications.*" };
 
 		builder.fetchSource(include, exclude);
