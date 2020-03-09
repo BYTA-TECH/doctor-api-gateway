@@ -223,6 +223,9 @@ public class DoctorQueryServiceImpl implements DoctorQueryService {
 		return sessionInfoPage;
 
 	}
+	
+	
+
 	public DoctorSettingsDTO findDoctorSettings(Long id){
 		QueryBuilder dslQuery = QueryBuilders.boolQuery().filter(termQuery("id",id));
 
@@ -293,6 +296,23 @@ public DoctorSettingsDTO findDoctorSettings(String doctorIdpCode){
 	
 }
 
+public Page<SessionInfo> findSessionInfoByWeekday(String doctorIdpCode, Long weekday, Pageable pageable){
+	
+	QueryBuilder dslQuery = QueryBuilders.boolQuery()
+			.must(QueryBuilders.termQuery("doctorIdpCode.keyword", doctorIdpCode))
+			.must(QueryBuilders.termQuery("weekDay", weekday));
+	SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+	searchSourceBuilder.query(dslQuery);
+	SearchResponse searchResponse = serviceUtility.searchResponseForPage("sessioninfo", searchSourceBuilder,
+			pageable);
+
+	Page<SessionInfo> sessionInfoPage = serviceUtility.getPageResult(searchResponse, pageable, new SessionInfo());
+
+	log.debug("output", sessionInfoPage);
+
+	return sessionInfoPage;
+
+}
 
 
 }

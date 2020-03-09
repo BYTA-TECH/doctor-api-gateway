@@ -19,5 +19,6 @@ public interface DoctorQueryService{
 	public DoctorSettingsDTO findDoctorSettings(String doctorIdpCode); 
 	//public PaymentSettingsDTO findPaymentSettings(Long id);
 	public PaymentSettingsDTO findPaymentSettingsByDoctorIdpCode(String doctorIdpCode);
+	public Page<SessionInfo> findSessionInfoByWeekday(String doctorIdpCode, Long weekday, Pageable pageable);
 	
 }
