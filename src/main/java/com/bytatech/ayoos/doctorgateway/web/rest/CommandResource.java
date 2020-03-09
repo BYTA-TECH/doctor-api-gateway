@@ -120,7 +120,7 @@ public class CommandResource {
 		  return  doctorCommandService.updateSessionInfo (sessionInfoDTO);
 	  }
 	  
-	  @DeleteMapping("/work-places/{id}")
+	  @DeleteMapping("/session-infos/{id}")
 	  public void deleteSessionInfo(@PathVariable Long id){
 		  doctorCommandService.deleteSessionInfo(id);
 	  } 
