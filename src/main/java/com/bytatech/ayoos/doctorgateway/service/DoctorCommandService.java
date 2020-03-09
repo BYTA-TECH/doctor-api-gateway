@@ -47,4 +47,8 @@ public interface DoctorCommandService {
 
 	public ResponseEntity<DoctorSettingsDTO> updateDoctorSetting(DoctorSettingsDTO doctorSettingsDTO);
 
+	public ResponseEntity<SessionInfoDTO> updateSessionInfo(SessionInfoDTO sessionInfoDTO);
+
+	public void deleteSessionInfo(Long id);
+
 }

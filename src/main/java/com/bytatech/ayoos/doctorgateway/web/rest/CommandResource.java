@@ -103,7 +103,7 @@ public class CommandResource {
 		  
 	  }
 	  
-	  @DeleteMapping("/work-places")
+	  @DeleteMapping("/work-places/{id}")
 	  public void deleteWorkPlace(@PathVariable Long id){
 		  doctorCommandService.deleteWorkPlace(id);
 	  } 
@@ -114,6 +114,11 @@ public class CommandResource {
 		 public ResponseEntity<List<SessionInfoDTO>>  createSessionInfoByDates(@RequestBody List<TimingDetailDTO> timingDetailDTO){
 			return   doctorCommandService.createSessionInfoByDates(timingDetailDTO);
 		 }
+	  
+	  @PutMapping("/session-infos")
+	  public ResponseEntity<SessionInfoDTO> updateSessionInfo(@RequestBody SessionInfoDTO sessionInfoDTO){
+		  return  doctorCommandService.updateSessionInfo (sessionInfoDTO);
+	  }
 
 	@PostMapping("/paymentSettings")
 	public ResponseEntity<PaymentSettingsDTO> createPaymentSetting(@RequestBody PaymentSettingsDTO paymentSettingsDTO) {

@@ -150,6 +150,18 @@ public class DoctorCommandServiceImpl  implements DoctorCommandService {
 	public ResponseEntity<DoctorSettingsDTO> updateDoctorSetting(  DoctorSettingsDTO doctorSettingsDTO) {
 		return doctorSettingsResourceApi.updateDoctorSettingsUsingPUT(doctorSettingsDTO);
 	}
+
+
+	@Override
+	public ResponseEntity<SessionInfoDTO> updateSessionInfo(SessionInfoDTO sessionInfoDTO) {
+		return sessionInfoAPi.updateSessionInfoUsingPUT(sessionInfoDTO);
+	}
+
+
+	@Override
+	public void deleteSessionInfo(Long id) {
+		sessionInfoAPi.deleteSessionInfoUsingDELETE(id);
+	}
 	
 
 }
