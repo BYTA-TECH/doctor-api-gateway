@@ -296,11 +296,29 @@ public DoctorSettingsDTO findDoctorSettings(String doctorIdpCode){
 	
 }
 
-public Page<SessionInfo> findSessionInfoByWeekday(String doctorIdpCode, Long weekday, Pageable pageable){
+//public Page<SessionInfo> findSessionInfoByWeekday(String doctorIdpCode, Long weekday, Pageable pageable){
+//	
+//	QueryBuilder dslQuery = QueryBuilders.boolQuery()
+//			.must(QueryBuilders.termQuery("doctorIdpCode.keyword", doctorIdpCode))
+//			.must(QueryBuilders.termQuery("weekDay", weekday));
+//	SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+//	searchSourceBuilder.query(dslQuery);
+//	SearchResponse searchResponse = serviceUtility.searchResponseForPage("sessioninfo", searchSourceBuilder,
+//			pageable);
+//
+//	Page<SessionInfo> sessionInfoPage = serviceUtility.getPageResult(searchResponse, pageable, new SessionInfo());
+//
+//	log.debug("output", sessionInfoPage);
+//
+//	return sessionInfoPage;
+//
+//}
+public Page<SessionInfo> findSessionInfoByWeekday(String doctorIdpCode, Long weekday,Long workPlaceId, Pageable pageable){
 	
 	QueryBuilder dslQuery = QueryBuilders.boolQuery()
 			.must(QueryBuilders.termQuery("doctorIdpCode.keyword", doctorIdpCode))
-			.must(QueryBuilders.termQuery("weekDay", weekday));
+			.must(QueryBuilders.termQuery("weekDay", weekday))
+			.must(QueryBuilders.termQuery("workPlace.id", workPlaceId));
 	SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
 	searchSourceBuilder.query(dslQuery);
 	SearchResponse searchResponse = serviceUtility.searchResponseForPage("sessioninfo", searchSourceBuilder,

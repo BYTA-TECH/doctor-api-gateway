@@ -75,13 +75,19 @@ public class QueryResource {
 				.body(doctorQueryService.findSessionInfoByDoctorsWorkPlace(doctorIdpCode, workPlaceId, pageable));
 	}
 	
-	@GetMapping("/findAllSesionInfoByWeekday/{doctorIdpCode}/{weekday}")
-	public ResponseEntity<Page<SessionInfo>> findAllSesionInfoByWeekday(@PathVariable String doctorIdpCode,
-			@PathVariable Long weekday, Pageable pageable) {
-		return ResponseEntity.ok()
-				.body(doctorQueryService.findSessionInfoByWeekday(doctorIdpCode, weekday, pageable));
-	}
+//	@GetMapping("/findAllSesionInfoByWeekday/{doctorIdpCode}/{weekday}")
+//	public ResponseEntity<Page<SessionInfo>> findAllSesionInfoByWeekday(@PathVariable String doctorIdpCode,
+//			@PathVariable Long weekday, Pageable pageable) {
+//		return ResponseEntity.ok()
+//				.body(doctorQueryService.findSessionInfoByWeekday(doctorIdpCode, weekday, pageable));
+//	}
 	
+	@GetMapping("/findAllSesionInfoByWeekday/{doctorIdpCode}/{weekday}/{workPlaceId}")
+	public ResponseEntity<Page<SessionInfo>> findAllSesionInfoByWeekday(@PathVariable String doctorIdpCode,
+			@PathVariable Long weekday, @PathVariable Long workPlaceId, Pageable pageable) {
+		return ResponseEntity.ok()
+				.body(doctorQueryService.findSessionInfoByWeekday(doctorIdpCode, weekday,workPlaceId, pageable));
+	}
 
 	@GetMapping("/doctorSettings/{doctorIdpCode}")
 	public ResponseEntity<DoctorSettingsDTO> findDoctorSettings(@PathVariable String doctorIdpCode) {
